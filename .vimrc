@@ -1,0 +1,241 @@
+" Contents
+" I. Built-in settings
+"   1. Appearance
+"   2. Behavior
+" II. Custom settings
+"   1. Appearance
+"   2. Behavior
+"
+" Note that some file-specific settings are found instead in
+" ~/.vim/ftplugin/<filetype>.vim , if putting them there makes more sense
+
+"===============================================================================
+"" Pathogen
+execute pathogen#infect()
+
+""
+" I. Built-in settings
+""
+
+"" 1. Appearance
+
+" Show line numbers
+set number
+" Don't restrict draw speed
+set ttyfast
+" Detect filetypes
+filetype on
+" Highlight search terms
+" set hlsearch
+" Always display a statusline
+set laststatus=2
+
+" Sets up the statusline.  For help, ':h statusline'
+set statusline=%0.120F               " full path
+set statusline+=\ Win:%{winnr()}    " window number
+set statusline+=%m                  " modified flag
+set statusline+=%15.15c             " column number
+set statusline+=%=                  " middle divider
+set statusline+=%l/%L               " line number, total line
+set statusline+=\ [%p%%]            " percent through file
+
+" 'Report,' or show on the command line, all changes
+set report=0
+
+" Show lines that are wrapped with '> '
+set showbreak=>\
+
+" Set window title to name of file
+set title
+set titlestring=%f                  " relative path
+set titlelen=85
+
+" Sets up solarized colors
+" The best way to do this is to actually have OS X's Terminal have its 16 ANSI
+" colors defined solarized-style, then just have the vim solarized colorscheme
+" rely on that.
+" Tell vim my terminal is 256 colors - don't do this, see above
+"set t_Co=256
+" This tells Solarized to explicitly set a background color on the 'Normal'
+" highlight group, rather than allow the terminal background color to be used by
+" default. We do this because OS X terminal mysteriously brightens any ANSI
+" color displayed over the default background, but not over a set background
+" color (even if those two are the same color!).
+let g:solarized_termtrans=0
+" Enable syntax highlighting if this is not a diff session
+if &diff
+  syntax off
+else
+  syntax enable
+endif
+set background=dark
+colorscheme solarized
+
+" Show background color on entire cursor line
+set cursorline
+"highlight CursorLine ctermbg=NONE cterm=underline
+"highlight CursorLine ctermbg=10
+
+" Highlight json files like javascript
+autocmd BufNewFile,BufRead *.json set ft=javascript
+" Highlight various Fastlane files like Ruby
+autocmd BufNewFile,BufRead Fastfile,Appfile,Deliverfile set filetype=ruby
+autocmd BufNewFile,BufRead .arcunit,.arclint set filetype=json
+" Highlight Python stub files like Python (because they are Python!)
+autocmd BufNewFile,BufRead *.pyi set ft=python
+" Don't expand tabs in gitconfig files
+autocmd BufNewFile,BufRead .gitconfig set noexpandtab
+
+
+
+"" 2. Behavior
+
+" Make the backspace key work as expected
+set backspace=indent,eol,start
+" Don't put in actual <tab>s, use <space>s instead
+set expandtab
+" How many spaces to use when <tab> is pressed
+set tabstop=4
+" How many spaces to use when indentation is increased/decreased
+set shiftwidth=4
+" Set the wrapping width to 120 for all files, by default
+set textwidth=120
+" During softwrapping, break at whitespace
+set linebreak
+" Turn on filetype identification
+filetype on
+" Indent based on filetype identification
+filetype plugin indent on
+" Cause ~ to behave as an operator
+set tildeop
+" Search incrementally
+" set incsearch
+" Split new windows above current window
+set splitbelow
+" Split new windows to the right of current window
+set splitright
+" Set key sequence timeout in ms
+set timeoutlen=300
+" Use autoindent
+set autoindent
+" Ignore case by default...
+set ignorecase
+" ...unless there's one or more uppercase letters in the search
+set smartcase
+" Write to swapfile and update vim-gitgutter more often
+set updatetime=250
+
+" Persistent undo
+set undofile
+" Undo save location
+set undodir=$HOME/.vim/undo
+
+
+""
+" II. Custom settings
+""
+
+"" 1. Appearance
+
+
+" Add 'C' command to clear search highlighting
+command! C let @/=""
+
+" Color the 80th column to indicate ANSI length limit
+"highlight ColorColumn ctermbg=8
+"set colorcolumn=80
+" Highlight any text that is past the 80 char limit
+"highlight OverLength ctermbg=240
+"match OverLength /\%81v.\+/
+
+" Highlighting for the status line using StatusLineHighlight plugin
+highlight def StatusLineModified        term=reverse cterm=reverse ctermfg=124 ctermbg=235 gui=reverse
+highlight def StatusLineModifiedNC      term=reverse cterm=reverse ctermfg=88  ctermbg=235 gui=reverse
+highlight def StatusLinePreview         term=reverse cterm=reverse ctermfg=245 ctermbg=235 gui=reverse
+highlight def StatusLinePreviewNC       term=reverse cterm=reverse ctermfg=240 ctermbg=235 gui=reverse
+highlight def StatusLineReadonly        term=reverse cterm=reverse ctermfg=28  ctermbg=235 gui=reverse
+highlight def StatusLineReadonlyNC      term=reverse cterm=reverse ctermfg=22  ctermbg=235 gui=reverse
+highlight def StatusLineSpecial         term=reverse cterm=reverse ctermfg=245 ctermbg=235 gui=reverse
+highlight def StatusLineSpecialNC       term=reverse cterm=reverse ctermfg=240 ctermbg=235 gui=reverse
+highlight def StatusLineUnmodifiable    term=reverse cterm=reverse ctermfg=245 ctermbg=235 gui=reverse
+highlight def StatusLineUnmodifiableNC  term=reverse cterm=reverse ctermfg=240 ctermbg=235 gui=reverse
+
+
+"" 2. Behavior
+
+" Use actual tabs in Makefiles (they won't work with spaces)
+autocmd FileType make setlocal noexpandtab
+" Use two spaces in Ruby files
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 tw=120
+
+" Use actual tabs in files named exactly 'Makecfg' or 'Makerules'
+autocmd BufNewFile,BufRead Makecfg,Makerules setlocal noexpandtab
+
+" Use two spaces in .bmbf.yaml files
+autocmd BufRead *.bmbf.yaml setlocal shiftwidth=2 tabstop=2 tw=80
+
+" Set shiftwidth to 4 for python
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
+
+" Hard-wrap text in a Phabricator diff description or update message to 150 cols
+autocmd BufRead */edit.*/new-commit,*/edit.*/differential-update-comments setlocal tw=150
+
+" Don't try to write backups with crontab, that confuses it
+autocmd filetype crontab setlocal nobackup nowritebackup
+
+" Don't change the eol on json files
+autocmd filetype json setlocal nofixeol
+
+" Add a 'Tags: ' field to phabricator diff descriptions, and prepopulate it
+" with '#ios-mobile-platform'
+" Create an autocmd on BufRead, when the file path matches the given shell glob
+" This autocmd calls the AddTagsField function
+autocmd BufRead */edit.*/new-commit call AddTagsField()
+function! AddTagsField()
+  " If the field is already here somehow, bail
+  if search('^Tags:', 'cn') > 0
+    return
+  endif
+
+  " Note: to type unprintables, like return, do CTRL-V followed by the
+  " unprintable. See :h i_CTRL-V
+  " Go to top of file
+  execute "normal! gg"
+  " Find last occurence of a line like 'Blah foo: '
+  " If it doesn't exist, bail
+  if search('^[[:alpha:] ]\+: *$', 'bw') == 0
+    return
+  endif
+
+  " Add new line containing 'Tags: #ios-mobile-platform'
+  execute "normal! o\<cr>Tags: #ios-mobile-platform"
+  " Go back to top
+  execute "normal! gg"
+endfunction
+
+" Don't allow the cursor to get within 3 lines of the bottom or top of screen
+set scrolloff=3
+
+" Remap 'jj' to the <ESC> key in insert mode, so that pressing that
+" combination quickly in series will return to normal mode
+inoremap jj <ESC>
+
+" Remap 'Y' in normal mode to yank to the end of the line rather than yank the
+" whole line. See :h Y
+nnoremap Y y$
+
+" Remap ) to skip over an existing ) if it's under the cursor, otherwise
+" print an actual )
+"inoremap <silent> ) <C-R>=CloseParen()<CR>
+"function! CloseParen()
+"    let l:curChar = getline(".")[col(".")-1]
+"    if curChar == ")"
+"        if col(".") != col("$") - 1
+"            normal l
+"            return ""
+"        else
+"            return "\<C-O>A"
+"        endif
+"    endif
+"    return ")"
+"endfunction
