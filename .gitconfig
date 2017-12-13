@@ -1,6 +1,6 @@
 [user]
 	name = Riley Avron
-	email = ravron@dropbox.com
+	useConfigOnly = true
 
 [alias]
 	s = status
