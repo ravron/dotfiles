@@ -7,6 +7,7 @@ readonly pack_path=~/.vim/pack/ravron/start
 mkdir -p "$pack_path"
 cd "$pack_path"
 
+# Note that this function changes the working directory.
 function package () {
     local repo_url=$1
     local expected_repo=$(basename "$repo_url" .git)
