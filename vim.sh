@@ -2,7 +2,10 @@
 
 set -eux
 
-mkdir -p ~/.vim/pack/ravron/start
+readonly pack_path=~/.vim/pack/ravron/start
+
+mkdir -p "$pack_path"
+cd "$pack_path"
 
 function package () {
     local repo_url=$1
@@ -17,4 +20,7 @@ function package () {
     fi
 }
 
-package git@github.com:airblade/vim-gitgutter.git
+package git@github.com:airblade/vim-gitgutter.git &
+package git@github.com:altercation/vim-colors-solarized.git &
+
+wait
