@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eux
+set -eu
 
 readonly pack_path=~/.vim/pack/ravron/start
 
@@ -20,6 +20,10 @@ function package () {
         git clone -q "$repo_url"
     fi
 }
+
+# Auth to github, making sure the agent has keys so that we don't need to interact with the clone commands. Successful
+# auth exits 1 anyways; OR with true to prevent exit due to set -e.
+ssh -T git@github.com &>/dev/null || true
 
 package git@github.com:airblade/vim-gitgutter.git &
 package git@github.com:altercation/vim-colors-solarized.git &
