@@ -1,0 +1,6 @@
+# Ignore vim swap files
+# According to :h E326, .swp will be decremented until it reaches .saa (.swp,
+# .swo, .swn, ..., .svz, .svy, ..., .saa). 
+.*.s[a-w][a-z]
+.DS_Store
+.idea
