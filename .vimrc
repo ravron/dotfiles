@@ -10,8 +10,6 @@
 " ~/.vim/ftplugin/<filetype>.vim , if putting them there makes more sense
 
 "===============================================================================
-"" Pathogen
-execute pathogen#infect()
 
 ""
 " I. Built-in settings
