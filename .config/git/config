@@ -60,8 +60,6 @@
 	HEAD = cyan
 [rebase]
 	autoStash = true
-[core]
-	excludesfile = /Users/ravron/.gitignore
 [status]
 	submoduleSummary = true
 [interactive]
