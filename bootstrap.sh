@@ -19,7 +19,9 @@ function doIt() {
         --verbose \
         --human-readable \
         --no-perms . ~;
+    set +x
     source ~/.bash_profile;
+    set -x
 }
 
 if [ "${1-}" == "--force" -o "${1-}" == "-f" ]; then
