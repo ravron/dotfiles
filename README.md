@@ -1,5 +1,5 @@
 # ravron's dotfiles
-*WARNING:* Do not use any of these configuration files, nor execute any of these scripts, until you've reviewed and understood them yourself.
+**WARNING:** Do not use any of these configuration files, nor execute any of these scripts, until you've reviewed and understood them yourself.
 
 ## Installation
 Clone the repo and run `boostrap.sh`. This script pulls the tip of master and rsyncs its configuration files into `$HOME`. This will overwrite any existing configuration files.
