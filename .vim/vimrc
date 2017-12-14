@@ -28,8 +28,8 @@ filetype on
 " Always display a statusline
 set laststatus=2
 
-" Sets up the statusline.  For help, ':h statusline'
-set statusline=%0.120F               " full path
+" Sets up the statusline. See ':h statusline'
+set statusline=%0.120F              " full path
 set statusline+=\ Win:%{winnr()}    " window number
 set statusline+=%m                  " modified flag
 set statusline+=%15.15c             " column number
