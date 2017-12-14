@@ -164,25 +164,28 @@ highlight def StatusLineUnmodifiableNC  term=reverse cterm=reverse ctermfg=240 c
 " Use actual tabs in Makefiles (they won't work with spaces)
 autocmd FileType make setlocal noexpandtab
 " Use two spaces in Ruby files
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 tw=120
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
 " Use actual tabs in files named exactly 'Makecfg' or 'Makerules'
 autocmd BufNewFile,BufRead Makecfg,Makerules setlocal noexpandtab
 
 " Use two spaces in .bmbf.yaml files
-autocmd BufRead *.bmbf.yaml setlocal shiftwidth=2 tabstop=2 tw=80
+autocmd BufRead *.bmbf.yaml setlocal shiftwidth=2 tabstop=2 textwidth=80
 
 " Set shiftwidth to 4 for python
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
 
 " Hard-wrap text in a Phabricator diff description or update message to 150 cols
-autocmd BufRead */edit.*/new-commit,*/edit.*/differential-update-comments setlocal tw=150
+autocmd BufRead */edit.*/new-commit,*/edit.*/differential-update-comments setlocal textwidth=150
 
 " Don't try to write backups with crontab, that confuses it
-autocmd filetype crontab setlocal nobackup nowritebackup
+autocmd FileType crontab setlocal nobackup nowritebackup
 
 " Don't change the eol on json files
-autocmd filetype json setlocal nofixeol
+autocmd FileType json setlocal nofixeol
+
+" textwidth of 0 for markdown; that is, don't hard wrap
+autocmd FileType markdown setlocal textwidth=0
 
 " Add a 'Tags: ' field to phabricator diff descriptions, and prepopulate it
 " with '#ios-mobile-platform'
