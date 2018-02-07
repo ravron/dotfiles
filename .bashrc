@@ -138,27 +138,17 @@ export EDITOR=vim
 
 # Location aliases
 alias src="cd ~/src"
-alias xp="cd ~/src/xplat"
-alias mm="cd ~/src/mobile-misc"
-alias db="cd ~/src/xplat/dbapp-ios/Dropbox"
 alias scratch="cd ~/scratch"
-alias release="cd ~/src/xplat/tools/release/ios/dbapp"
-alias aut="cd ~/src/xplat/dbapp-ios/Dropbox/Tests/Automata/Tests"
-alias autgit="cd ~/src/xplat/dbapp-ios/automata"
 
 # Command aliases
-alias ox="open Dropbox.xcodeproj"
 alias ll="ls -ahl"
 alias g="git"
 alias gp="gitpic"
-alias xsu="~/src/xplat/submodule_update.sh"
-# Exclude these damn files from rg search
-alias rg="rg -g '!*.xcactivitylog'"
 alias date8601="date -u +'%Y-%m-%dT%H:%M:%SZ'"
 
 # Make code completion for git work for g. See
 # /usr/local/etc/bash_completion.d/git-completion.bash
-__git_complete g __git_main
+# __git_complete g __git_main
 
 # Use vim mode
 set -o vi
@@ -181,18 +171,8 @@ set -C
 #set +x
 #exec 2>&3 3>&-
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/src/misc/gregprice/stacked-diffs"
 # Get `python` to be brew python, see `brew info python` and https://github.com/Homebrew/homebrew-core/issues/15746
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
-source ~/src/oss/GitChildBranchHelpers/bash_zsh_git_helper_aliases.sh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/google-cloud-sdk/path.bash.inc' ]; then source '/usr/local/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/usr/local/google-cloud-sdk/completion.bash.inc' ]; then source '/usr/local/google-cloud-sdk/completion.bash.inc'; fi
 
 # set +x
 # exec 2>&3 3>&-
