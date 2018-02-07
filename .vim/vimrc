@@ -83,6 +83,8 @@ autocmd BufNewFile,BufRead .arcunit,.arclint set filetype=json
 autocmd BufNewFile,BufRead *.pyi set ft=python
 " Don't expand tabs in gitconfig files
 autocmd BufNewFile,BufRead .gitconfig set noexpandtab
+" Treat any file matching *?config in ~/.ssh as an ssh config file
+autocmd BufNewFile,BufRead ~/.ssh/*?config set filetype=sshconfig
 
 
 
