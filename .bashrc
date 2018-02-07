@@ -148,7 +148,7 @@ alias date8601="date -u +'%Y-%m-%dT%H:%M:%SZ'"
 
 # Make code completion for git work for g. See
 # /usr/local/etc/bash_completion.d/git-completion.bash
-# __git_complete g __git_main
+__git_complete g __git_main
 
 # Use vim mode
 set -o vi
