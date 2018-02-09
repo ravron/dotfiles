@@ -11,6 +11,7 @@ function doIt() {
         --exclude ".DS_Store" \
         --exclude "/bootstrap.sh" \
         --exclude "/brew.sh" \
+        --exclude "/macos.sh" \
         --exclude "/vim.sh" \
         --exclude "/init/" \
         --exclude "/README.md" \
