@@ -15,7 +15,7 @@
 	ss = show --stat
 	fm = fetch origin master:master
 	p = pull
-	l = log
+	l = log --decorate-refs-exclude=\"tags/deployment*\" --decorate-refs-exclude=\"tags/scheduler-on-production*\"
 	dc = diff --cached
 	ls = log --stat
 	bv = branch -vv
