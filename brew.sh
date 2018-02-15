@@ -37,6 +37,7 @@ brew install cowsay 2>/dev/null
 brew install figlet 2>/dev/null
 brew install imagemagick 2>/dev/null
 brew install tree 2>/dev/null
+brew install jq 2>/dev/null
 
 # TODO: Python3
 brew install python 2>/dev/null

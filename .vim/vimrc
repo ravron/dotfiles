@@ -98,8 +98,8 @@ set expandtab
 set tabstop=4
 " How many spaces to use when indentation is increased/decreased
 set shiftwidth=4
-" Set the wrapping width to 120 for all files, by default
-set textwidth=120
+" Set the default wrapping width for all files
+set textwidth=80
 " During softwrapping, break at whitespace
 set linebreak
 " Turn on filetype identification
