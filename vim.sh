@@ -2,9 +2,31 @@
 
 set -eu
 
+readonly vim_version=$(vim --version | head -1 | cut -d ' ' -f 5)
+readonly min_vim_version="8.0"
+
+if [[ $(bc <<<"$vim_version >= $min_vim_version") == "0" ]]; then
+    cat >&2 <<DONE
+vim at:
+    $(command -v vim)
+is version $vim_version, but native vim packages require vim $min_vim_version or
+above. You can:
+  - Cancel and run brew.sh first to install the latest version of vim
+  - Proceed, which will install the packages where vim >= $min_vim_version would
+    look for them.
+DONE
+    read -p "Proceed with installation of packages? (y/N) " -n 1;
+    if ! [[ $REPLY =~ ^[Yy]$ ]]; then
+        exit 1
+    fi
+    echo ""
+fi
+
+
+
 # I don't believe $USER can have spaces, but no harm in quoting it anyways.
 readonly pack_path=~/.vim/pack/"${USER}"/start
-echo $pack_path
+echo "Installing vim packages to ${pack_path}..."
 
 mkdir -p "$pack_path"
 cd "$pack_path"
