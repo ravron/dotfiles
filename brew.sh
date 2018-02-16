@@ -28,6 +28,7 @@ fi;
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg 2>/dev/null
+brew install paperkey 2>/dev/null
 
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi 2>/dev/null
