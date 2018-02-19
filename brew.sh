@@ -28,7 +28,6 @@ fi;
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg 2>/dev/null
-brew install paperkey 2>/dev/null
 
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi 2>/dev/null
@@ -43,6 +42,9 @@ brew install jq 2>/dev/null
 # TODO: Python3
 brew install python 2>/dev/null
 brew install python3 2>/dev/null
+
+# Installs brew rmtree, for removing trees of brew deps
+brew tap beeftornado/rmtree
 
 # Remove outdated versions from the cellar.
 brew cleanup 2>/dev/null
