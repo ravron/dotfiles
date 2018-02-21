@@ -221,7 +221,8 @@ set scrolloff=3
 
 " Remap 'jj' to the <ESC> key in insert mode, so that pressing that
 " combination quickly in series will return to normal mode
-inoremap jj <ESC>
+" Disabled right now to train me to use caps lock
+" inoremap jj <ESC>
 
 " Remap 'Y' in normal mode to yank to the end of the line rather than yank the
 " whole line. See :h Y
