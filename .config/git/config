@@ -1,7 +1,7 @@
 # Use this include to specify an email to use on this machine by default.
-#   git config --file ~/.config/git/email_config user.email <email>
+#   git config --file ~/.config/git/private_config user.email <email>
 [include]
-	path = email_config
+	path = private_config
 [user]
 	name = Riley Avron
 	useConfigOnly = true
