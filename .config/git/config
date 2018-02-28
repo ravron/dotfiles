@@ -1,5 +1,9 @@
-# Use this include to specify an email to use on this machine by default.
-#   git config --file ~/.config/git/private_config user.email <email>
+# Use this include to specify an email to use on this machine by default, and
+# optionally override it to your work email based on path to a given git
+# directory.
+#   git config --file ~/.config/git/private_config user.email <personal_email>
+#   git config --file ~/.config/git/private_config includeIf.gitdir:~/your/work/dir.path work_config
+#   git config --file ~/.config/git/work_config user.email <work_email>
 [include]
 	path = private_config
 [user]
