@@ -73,8 +73,7 @@
 [interactive]
 	singleKey = true
 [branch]
-	# Doesn't play super well with Danny's child branch scripts
-	# autoSetupMerge = always
+	autoSetupMerge = always
 [commit]
 	verbose = true
 [format]
