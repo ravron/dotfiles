@@ -1,7 +1,11 @@
-# Use this include to specify an email to use on this machine by default.
-#   git config --file ~/.config/git/email_config user.email <email>
+# Use this include to specify an email to use on this machine by default, and
+# optionally override it to your work email based on path to a given git
+# directory.
+#   git config --file ~/.config/git/private_config user.email <personal_email>
+#   git config --file ~/.config/git/private_config includeIf.gitdir:~/your/work/dir.path work_config
+#   git config --file ~/.config/git/work_config user.email <work_email>
 [include]
-	path = email_config
+	path = private_config
 [user]
 	name = Riley Avron
 	useConfigOnly = true
@@ -69,8 +73,7 @@
 [interactive]
 	singleKey = true
 [branch]
-	# Doesn't play super well with Danny's child branch scripts
-	# autoSetupMerge = always
+	autoSetupMerge = always
 [commit]
 	verbose = true
 [format]
