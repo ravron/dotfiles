@@ -73,7 +73,7 @@
 [interactive]
 	singleKey = true
 [branch]
-	autoSetupMerge = always
+	# autoSetupMerge = always
 [commit]
 	verbose = true
 [format]
