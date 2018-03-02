@@ -16,10 +16,12 @@ die() {
 }
 
 find_paths() {
+    # see comment about karabiner below
     find \
         . \
         \! \( -name ".git" -type d -prune \) \
         \! \( -name "init" -type d -prune \) \
+        \! \( -name "karabiner" -type d -prune \) \
         \! -name "." \
         \! -name ".DS_Store" \
         \! -name "bootstrap.sh" \
@@ -29,7 +31,8 @@ find_paths() {
         \! -name "vim.sh" \
         \! -name "README.md" \
         \! -name "*.swp" \
-        -type $1 -print0
+        -type "$1" \
+        -print0
 }
 
 check_file() {
@@ -112,24 +115,27 @@ while getopts ':nh' OPT; do
 done
 
 DIRS_ARR=()
-FILES_ARR=()
+TO_LINK_ARR=()
 
 # read null-delimited directory names from find -print0 into DIRS_ARR
 while IFS= read -r -d '' DIR; do
     # remove leading './'
     DIR=$(cut -c 3- <<<"$DIR")
-
     DIRS_ARR+=("$DIR")
 done < <(find_paths d)
 
 while IFS= read -r -d '' FILE; do
     FILE=$(cut -c 3- <<<"$FILE")
-    FILES_ARR+=("$FILE")
+    TO_LINK_ARR+=("$FILE")
 done < <(find_paths f)
 
+# karabiner overwrites its configuration file, and so its directory must be
+# symlinked instead. sigh.
+# https://github.com/tekezo/Karabiner-Elements/issues/1284
+TO_LINK_ARR+=(".config/karabiner")
 
 CHECK_RESULT=
-for FILE in "${FILES_ARR[@]}"; do
+for FILE in "${TO_LINK_ARR[@]}"; do
     if ! check_file "$FILE"; then
         CHECK_RESULT=1
         echo "file already exists: $HOME/$FILE"
@@ -148,6 +154,6 @@ for DIR in "${DIRS_ARR[@]}"; do
     process_dir "$DIR"
 done
 
-for FILE in "${FILES_ARR[@]}"; do
+for FILE in "${TO_LINK_ARR[@]}"; do
     process_file "$FILE"
 done
