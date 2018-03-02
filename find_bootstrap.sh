@@ -5,6 +5,7 @@ set -euo pipefail
 print_help() {
     cat <<EOF
 Create symlinks in your home directory that point to files in this repository.
+Will not overwrite existing files.
     -n    dry-run: show what would be done
     -h    help: show this help and exit
 EOF
