@@ -81,8 +81,8 @@ autocmd BufNewFile,BufRead Fastfile,Appfile,Deliverfile set filetype=ruby
 autocmd BufNewFile,BufRead .arcunit,.arclint set filetype=json
 " Highlight Python stub files like Python (because they are Python!)
 autocmd BufNewFile,BufRead *.pyi set ft=python
-" Don't expand tabs in gitconfig files
-autocmd BufNewFile,BufRead .gitconfig set noexpandtab
+" Treat any file matching *?config in any .config/git as a git config file
+autocmd BufNewFile,BufRead *.config/git/*?config set filetype=gitconfig
 " Treat any file matching *?config in ~/.ssh as an ssh config file
 autocmd BufNewFile,BufRead ~/.ssh/*?config set filetype=sshconfig
 
@@ -129,6 +129,9 @@ set updatetime=250
 set undofile
 " Undo save location
 set undodir=$HOME/.vim/undo
+
+" Don't expand tabs in gitconfig files
+autocmd FileType gitconfig setlocal noexpandtab
 
 
 ""
@@ -221,7 +224,8 @@ set scrolloff=3
 
 " Remap 'jj' to the <ESC> key in insert mode, so that pressing that
 " combination quickly in series will return to normal mode
-inoremap jj <ESC>
+" Disabled right now to train me to use caps lock
+" inoremap jj <ESC>
 
 " Remap 'Y' in normal mode to yank to the end of the line rather than yank the
 " whole line. See :h Y

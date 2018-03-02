@@ -15,6 +15,7 @@ function doIt() {
         --exclude "/vim.sh" \
         --exclude "/init/" \
         --exclude "/README.md" \
+        --checksum \
         --archive \
         --verbose \
         --human-readable \
