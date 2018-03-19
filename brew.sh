@@ -39,9 +39,10 @@ brew install imagemagick 2>/dev/null
 brew install tree 2>/dev/null
 brew install jq 2>/dev/null
 
-# TODO: Python3
+# python installs python 3 now
 brew install python 2>/dev/null
-brew install python3 2>/dev/null
+# Get a newer version of python2 as well
+brew install python@2 2>/dev/null
 
 # Installs brew rmtree, for removing trees of brew deps
 brew tap beeftornado/rmtree
