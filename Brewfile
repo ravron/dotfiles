@@ -1,9 +1,12 @@
 tap "homebrew/core"
 tap "homebrew/bundle"
+tap "caskroom/cask"
 tap "burntsushi/ripgrep", "https://github.com/BurntSushi/ripgrep.git"
 tap "beeftornado/rmtree"
 # Automatic configure script builder
 brew "autoconf"
+# Text processing scripting language
+brew "awk"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 4.1+
