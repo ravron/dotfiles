@@ -238,19 +238,3 @@ set scrolloff=3
 " Remap 'Y' in normal mode to yank to the end of the line rather than yank the
 " whole line. See :h Y
 nnoremap Y y$
-
-" Remap ) to skip over an existing ) if it's under the cursor, otherwise
-" print an actual )
-"inoremap <silent> ) <C-R>=CloseParen()<CR>
-"function! CloseParen()
-"    let l:curChar = getline(".")[col(".")-1]
-"    if curChar == ")"
-"        if col(".") != col("$") - 1
-"            normal l
-"            return ""
-"        else
-"            return "\<C-O>A"
-"        endif
-"    endif
-"    return ")"
-"endfunction
