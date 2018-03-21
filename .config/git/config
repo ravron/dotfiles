@@ -85,3 +85,7 @@
 [url "ssh://git@github.com/"]
 	# Rewrite URLs like https://github.com/ to ssh://git@github.com/
 	insteadOf = https://github.com/
+[sendemail]
+	smtpEncryption = tls
+	smtpServer = smtp.gmail.com
+	smtpServerPort = 587
