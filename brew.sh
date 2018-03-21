@@ -32,12 +32,26 @@ brew install gnupg 2>/dev/null
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi 2>/dev/null
 
-brew install git 2>/dev/null
-brew install cowsay 2>/dev/null
-brew install figlet 2>/dev/null
+# git send-email uses perl, but requires additional perl modules. Further, git
+# doesn't require the perl brew formula, and won't use the brewed perl unless
+# you pass --with-perl. Thus:
+#   1. Install brew's perl
+#   2. Use brewed perl's cpan to install the three required modules for
+#      send-email.
+#   3. Install git and use --with-perl to point it at the brewed perl.
+# See https://github.com/Homebrew/homebrew-core/issues/12870 for further
+# information.
+brew install perl 2>/dev/null
+cpan Net::SMTP::SSL MIME::Base64 Authen::SASL 2>/dev/null
+brew install git --with-perl 2>/dev/null
+
 brew install imagemagick 2>/dev/null
 brew install tree 2>/dev/null
 brew install jq 2>/dev/null
+
+# Critical utilities
+brew install cowsay 2>/dev/null
+brew install figlet 2>/dev/null
 
 # python installs python 3 now
 brew install python 2>/dev/null
