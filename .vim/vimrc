@@ -166,6 +166,14 @@ highlight def StatusLineUnmodifiableNC  term=reverse cterm=reverse ctermfg=240 c
 
 "" 2. Behavior
 
+
+" See https://github.com/xolox/vim-easytags/blob/master/README.md Do tag updates
+" in the background
+let g:easytags_async = 1
+" Don't auto-update highlighting (can do with :HighlightTags if desired but
+" beware) it slows things down like crazy when tags file is large.
+let g:easytags_auto_highlight = 0
+
 " Use actual tabs in Makefiles (they won't work with spaces)
 autocmd FileType make setlocal noexpandtab
 " Use two spaces in Ruby files
