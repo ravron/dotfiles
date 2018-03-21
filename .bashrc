@@ -145,6 +145,13 @@ alias ll="ls -ahl"
 alias g="git"
 alias gp="gitpic"
 alias date8601="date -u +'%Y-%m-%dT%H:%M:%SZ'"
+# The pattern in awk makes sure we don't touch the branch currently checked out
+# (or try to git branch -D * !!)
+# gdg for "git delete gone"
+alias gdg="git branch --verbose | \
+    rg --fixed-strings [gone] | \
+    awk '!/^\*/ {print \$1}' | \
+    xargs git branch --delete --force"
 
 # Make code completion for git work for g. See
 # /usr/local/etc/bash_completion.d/git-completion.bash
