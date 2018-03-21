@@ -2,7 +2,9 @@
 
 set -eu
 
-# Install command-line tools using Homebrew.
+# Install command-line tools using Homebrew. This script uses the brew bundle
+# functionality. See https://github.com/Homebrew/homebrew-bundle.
+# To add new things, brew bundle dump --describe --force
 
 # Make sure we’re using the latest Homebrew.
 brew update
