@@ -43,6 +43,10 @@ brew install vim --with-override-system-vi 2>/dev/null
 # information.
 brew install perl 2>/dev/null
 cpan Net::SMTP::SSL MIME::Base64 Authen::SASL 2>/dev/null
+# aaand the interactive.singleKey config requires Term::ReadKey, which
+# apparently doesn't come standard with the brew perl. Maybe this isn't worth it
+# just to get send-email working.
+cpan Term::ReadKey 2>/dev/null
 brew install git --with-perl 2>/dev/null
 
 brew install imagemagick 2>/dev/null
