@@ -6,7 +6,7 @@ set -eu
 # functionality. See https://github.com/Homebrew/homebrew-bundle.
 # To add new things, brew bundle dump --describe --force
 
-# Install and/or upgrade everything in the Brewfile
+# Install or upgrade everything in the Brewfile
 brew bundle install
 
 # Switch to using brew-installed bash as default shell
@@ -27,7 +27,9 @@ fi;
 # aaand the interactive.singleKey config requires Term::ReadKey, which
 # apparently doesn't come standard with the brew perl. Maybe this isn't worth it
 # just to get send-email working.
+# -T: don't run tests
 cpan -T Net::SMTP::SSL MIME::Base64 Authen::SASL Term::ReadKey 2>/dev/null
 
 # Remove outdated versions from the cellar.
 brew cleanup
+brew cask cleanup --outdated
