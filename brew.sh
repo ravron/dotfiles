@@ -2,6 +2,19 @@
 
 set -eu
 
+# Install homebrew if necessary
+if command -v brew &> /dev/null; then
+    read -p 'Homebrew not found. Install it? (y/N) ' -n 1
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo 'Installing Homebrew...'
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    else
+        echo 'You can install it manually from https://brew.sh/. Exiting.'
+        exit 1
+    fi
+fi
+
 # Install command-line tools using Homebrew. This script uses the brew bundle
 # functionality. See https://github.com/Homebrew/homebrew-bundle.
 # To add new things, brew bundle dump --describe --force
