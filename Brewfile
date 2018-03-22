@@ -55,3 +55,8 @@ brew "ykman"
 brew "zbar"
 # Recursively search directories for a regex pattern.
 brew "burntsushi/ripgrep/ripgrep-bin"
+cask "1password"
+cask "charles"
+cask "google-chrome"
+cask "karabiner-elements"
+cask "spectacle"
