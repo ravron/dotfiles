@@ -76,8 +76,18 @@ set cursorline
 
 " Highlight json files like javascript
 autocmd BufNewFile,BufRead *.json set ft=javascript
+
 " Highlight various Fastlane files like Ruby
-autocmd BufNewFile,BufRead Fastfile,Appfile,Deliverfile set filetype=ruby
+autocmd BufNewFile,BufRead Fastfile,Appfile,Deliverfile call SetRubyOptions()
+" Highlight Brewfiles like Ruby
+autocmd BufNewFile,BufRead Brewfile call SetRubyOptions()
+function SetRubyOptions()
+    set filetype=ruby
+    " https://stackoverflow.com/a/16920294/1292061
+    set nocursorline
+endfunction
+
+
 autocmd BufNewFile,BufRead .arcunit,.arclint set filetype=json
 " Highlight Python stub files like Python (because they are Python!)
 autocmd BufNewFile,BufRead *.pyi set ft=python
