@@ -21,6 +21,8 @@ brew "imagemagick"
 brew "dmtx-utils"
 # Banner-like program prints strings as ASCII art
 brew "figlet"
+# Monitor a directory for changes and run a shell command
+brew "fswatch"
 # Distributed revision control system
 brew "git", args: ["with-perl"]
 # Passphrase entry dialog utilizing the Assuan protocol
