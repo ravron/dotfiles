@@ -51,11 +51,6 @@
 # are replaced in my terminal with Solarized colors. "Use bold fonts" must be
 # off, and "Use bright colors for bold text" must be on.
 [color "diff"]
-	meta = yellow
-	frag = blue
-	old = red
-	new = green
-	func = red bold
 	oldMoved = red italic
 	newMoved = green italic
 	oldMovedAlternative = red italic
