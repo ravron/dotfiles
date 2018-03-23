@@ -48,31 +48,14 @@ set title
 set titlestring=%f                  " relative path
 set titlelen=85
 
-" Sets up solarized colors
-" The best way to do this is to actually have OS X's Terminal have its 16 ANSI
-" colors defined solarized-style, then just have the vim solarized colorscheme
-" rely on that.
-" Tell vim my terminal is 256 colors - don't do this, see above
-"set t_Co=256
-" This tells Solarized to explicitly set a background color on the 'Normal'
-" highlight group, rather than allow the terminal background color to be used by
-" default. We do this because OS X terminal mysteriously brightens any ANSI
-" color displayed over the default background, but not over a set background
-" color (even if those two are the same color!).
-let g:solarized_termtrans=0
-" Enable syntax highlighting if this is not a diff session
-if &diff
-  syntax off
-else
-  syntax enable
-endif
-set background=dark
-colorscheme solarized
+let g:gruvbox_italic=0
+set termguicolors
+colorscheme gruvbox
+syntax enable
 
 " Show background color on entire cursor line
 set cursorline
 "highlight CursorLine ctermbg=NONE cterm=underline
-"highlight CursorLine ctermbg=10
 
 " Highlight json files like javascript
 autocmd BufNewFile,BufRead *.json set ft=javascript

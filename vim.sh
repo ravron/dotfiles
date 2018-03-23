@@ -56,10 +56,10 @@ ssh -T git@github.com &>/dev/null || true
 # too many are accumulated, each can be started as a background job.
 
 package git@github.com:airblade/vim-gitgutter.git
-package git@github.com:altercation/vim-colors-solarized.git
 package git@github.com:xolox/vim-easytags.git
 # Required by easytags
 package git@github.com:xolox/vim-misc.git
+package git@github.com:morhetz/gruvbox.git
 
 # Wait for all outstanding jobs to terminate. Only necessary if running jobs in
 # background.
