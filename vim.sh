@@ -13,7 +13,8 @@ is version $vim_version, but native vim packages require vim $min_vim_version or
 above. You can:
   - Cancel and run brew.sh first to install the latest version of vim
   - Proceed, which will install the packages where vim >= $min_vim_version would
-    look for them.
+    look for them. They will not be used until you install a sufficiently new
+    version of vim.
 DONE
     read -p "Proceed with installation of packages? (y/N) " -n 1;
     if ! [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -31,7 +32,6 @@ echo "Installing vim packages to ${pack_path}..."
 mkdir -p "$pack_path"
 cd "$pack_path"
 
-# Note that this function changes the working directory.
 function package () {
     local -r repo_url="$1"
     local -r expected_repo=$(basename "$repo_url" .git)
