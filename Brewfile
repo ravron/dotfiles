@@ -33,6 +33,8 @@ brew "gnupg"
 brew "go"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Manage multiple Node.js versions
+brew "nvm"
 # SSL/TLS cryptography library
 brew "openssl"
 # Extract just secret information out of OpenPGP secret keys
