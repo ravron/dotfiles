@@ -178,7 +178,8 @@ set -C
 #set +x
 #exec 2>&3 3>&-
 
-# Get `python` to be brew python, see `brew info python` and https://github.com/Homebrew/homebrew-core/issues/15746
+# Get `python` to be brew python, see `brew info python` and
+# https://github.com/Homebrew/homebrew-core/issues/15746
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 if [ -f ~/.bashrc_private ]; then
