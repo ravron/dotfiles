@@ -1,5 +1,6 @@
 tap "homebrew/core"
 tap "homebrew/bundle"
+tap "homebrew/services"
 tap "caskroom/cask"
 tap "burntsushi/ripgrep", "https://github.com/BurntSushi/ripgrep.git"
 tap "beeftornado/rmtree"
@@ -33,10 +34,16 @@ brew "gnupg"
 brew "go"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Manage multiple Node.js versions
-brew "nvm"
+# Next-gen compiler infrastructure
+brew "llvm"
 # SSL/TLS cryptography library
 brew "openssl"
+# High-performance, schema-free, document-oriented database
+brew "mongodb"
+# Open source relational database management system
+brew "mysql"
+# Manage multiple Node.js versions
+brew "nvm"
 # Extract just secret information out of OpenPGP secret keys
 brew "paperkey"
 # Highly capable, feature-rich programming language
