@@ -1487,6 +1487,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>354F365A-F1D4-4A02-A289-7E4520B25AA8</string>
+	<key>DimInactiveSplitPanes</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
@@ -1496,6 +1498,8 @@
 	<key>NSNavLastRootDirectory</key>
 	<string>~/src/oss/dotfiles/init</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
@@ -1531,9 +1535,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-695 300 570 297 -1680 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>195 700 796 473 0 0 3008 1669 </string>
+	<string>931 383 937 512 0 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1680 23 1680 1004 -1680 0 1680 1027 </string>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>2006 0 1001 1669 0 0 3008 1669 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>-1680 0 1680 1027 -1680 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1705,12 +1713,16 @@
 			<true/>
 			<key>Background Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.12549020349979401</real>
+				<real>0.12941176470588237</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.12549020349979401</real>
+				<real>0.12549019607843137</real>
 				<key>Red Component</key>
-				<real>0.12549020349979401</real>
+				<real>0.11372549019607843</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -2116,7 +2128,7 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>Default</string>
+			<string>Gruvbox Dark Hard</string>
 			<key>Non Ascii Font</key>
 			<string>Monaco 12</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -2170,7 +2182,7 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -2196,13 +2208,20 @@
 	<key>NoSyncInstallationId</key>
 	<string>06F79DCE-F08C-4B60-96CF-EAD3A69E064D</string>
 	<key>NoSyncLastTipTime</key>
-	<real>543530263.21487296</real>
+	<real>544325855.77150798</real>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>543520945.56592405</real>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
 		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -2239,16 +2258,24 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/ravron/src/oss/dotfiles/init</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
 	<string>https://iterm2.com/appcasts/final.xml?shard=48</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
+	<key>SULastCheckTime</key>
+	<date>2018-03-30T23:52:01Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.2417467948717949</real>
 	<key>iTerm Version</key>
 	<string>3.1.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>1</integer>
+	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
 </dict>
