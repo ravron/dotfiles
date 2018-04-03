@@ -38,8 +38,6 @@ brew "jq"
 brew "llvm"
 # SSL/TLS cryptography library
 brew "openssl"
-# High-performance, schema-free, document-oriented database
-brew "mongodb"
 # Open source relational database management system
 brew "mysql"
 # Manage multiple Node.js versions
