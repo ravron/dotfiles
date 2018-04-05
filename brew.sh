@@ -8,6 +8,7 @@ if command -v brew &> /dev/null; then
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo 'Installing Homebrew...'
+        # See https://brew.sh/
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     else
         echo 'You can install it manually from https://brew.sh/. Exiting.'
@@ -27,6 +28,15 @@ if ! grep -q '/usr/local/bin/bash' /etc/shells; then
     echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
     chsh -s /usr/local/bin/bash
 fi;
+
+# Enable fzf autocomplete and fuzzy-finding in bash
+# See brew info fzf
+$(brew --prefix)/opt/fzf/install \
+    --key-bindings \
+    --completion \
+    --no-update-rc \
+    --no-zsh \
+    --no-fish
 
 # git send-email uses perl, but requires additional perl modules. Further, git
 # doesn't require the perl brew formula, and won't use the brewed perl unless
