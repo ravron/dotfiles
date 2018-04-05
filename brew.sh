@@ -3,7 +3,7 @@
 set -eu
 
 # Install homebrew if necessary
-if command -v brew &> /dev/null; then
+if ! command -v brew &> /dev/null; then
     read -p 'Homebrew not found. Install it? (y/N) ' -n 1
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
