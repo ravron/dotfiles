@@ -126,6 +126,10 @@ set undodir=$HOME/.vim/undo
 " Don't expand tabs in gitconfig files
 autocmd FileType gitconfig setlocal noexpandtab
 
+" Tell sh.vim shell syntax highlighting that I use bash. See
+" https://github.com/vim/vim/blob/master/runtime/syntax/sh.vim
+let g:is_bash = 1
+
 
 ""
 " II. Custom settings
