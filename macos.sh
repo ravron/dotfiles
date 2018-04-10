@@ -102,6 +102,11 @@ defaults write NSGlobalDomain AppleLocale -string "en_US"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
 defaults write NSGlobalDomain AppleMetricUnits -bool false
 
+# Show Unicode code point in system Character Viewer
+defaults read com.apple.CharacterPaletteIM CVActiveCategories | \
+    grep -q Category-Unicode || \
+    defaults write com.apple.CharacterPaletteIM CVActiveCategories -array-add -string Category-Unicode
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
