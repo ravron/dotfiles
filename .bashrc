@@ -196,3 +196,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # See brew info fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type directory'
+# export FZF_DEFAULT_OPTS='--preview "head -200 {}"'
