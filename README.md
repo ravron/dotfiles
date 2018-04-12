@@ -1,5 +1,5 @@
 # ravron's dotfiles
-**WARNING:** Do not use any of these configuration files, nor execute any of these scripts, until you've reviewed and understood them yourself.
+**WARNING:** Do not use any of these configuration files, nor execute any of these scripts, until you've reviewed and understood them yourself. I started this repository solely for my use, and it's quite possible that some part of it is incompatible with your current setup.
 
 ## Installation
 Clone the repo and run `boostrap.sh`. This script pulls the tip of master and symlinks its configuration files into `$HOME`. It will refuse to overwrite existing files, for your protection.
