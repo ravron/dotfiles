@@ -199,4 +199,11 @@ export NVM_DIR="$HOME/.nvm"
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --type directory'
+
+cds() {
+    local -r DIR=$(
+        cd ~/src
+        fd --type directory --max-depth 2 --exclude /go . | fzf
+    ) && cd ~/src/"$DIR"
+}
 # export FZF_DEFAULT_OPTS='--preview "head -200 {}"'
