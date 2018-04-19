@@ -207,3 +207,5 @@ cds() {
     ) && cd ~/src/"$DIR"
 }
 # export FZF_DEFAULT_OPTS='--preview "head -200 {}"'
+
+export ANDROID_SDK_ROOT=~/Library/Android/sdk
