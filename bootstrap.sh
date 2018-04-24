@@ -30,6 +30,7 @@ find_paths() {
         \! -name "find_bootstrap.sh" \
         \! -name "macos.sh" \
         \! -name "vim.sh" \
+        \! -name "Brewfile" \
         \! -name "README.md" \
         \! -name "*.swp" \
         -type "$1" \
