@@ -204,7 +204,8 @@ cds() {
     local -r DIR=$(
         cd ~/src
         fd --type directory --max-depth 2 --exclude /go . | fzf
-    ) && cd ~/src/"$DIR"
+    )
+    [[ -n "$DIR" ]] && cd ~/src/"$DIR"
 }
 # export FZF_DEFAULT_OPTS='--preview "head -200 {}"'
 
