@@ -2512,6 +2512,8 @@
 	<string>354F365A-F1D4-4A02-A289-7E4520B25AA8</string>
 	<key>DimInactiveSplitPanes</key>
 	<false/>
+	<key>HideTab</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
@@ -2557,12 +2559,14 @@
 	<true/>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-695 300 570 297 -1680 0 1680 1027 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>1194 957 620 392 0 0 3008 1669 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 3008 1669 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1274 1020 1016 512 0 0 3008 1669 </string>
+	<string>1274 1020 796 473 0 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1027 0 0 1680 1027 </string>
+	<string>664 921 665 427 0 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1002 0 1001 1669 0 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3317,7 +3321,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>06F79DCE-F08C-4B60-96CF-EAD3A69E064D</string>
 	<key>NoSyncLastTipTime</key>
-	<real>545692937.03365302</real>
+	<real>546373131.61887801</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -3342,6 +3346,11 @@
 		<string>0014</string>
 		<string>0015</string>
 		<string>0016</string>
+		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
+		<string>0020</string>
+		<string>0021</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -3387,7 +3396,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-04-13T18:18:11Z</date>
+	<date>2018-04-25T17:22:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -3395,7 +3404,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
