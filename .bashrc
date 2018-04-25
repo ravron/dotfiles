@@ -92,7 +92,7 @@ if [ -f /usr/local/share/bash-completion/bash_completion ]; then
 fi
 
 jobsrunning() {
-    local j=$(jobs)
+    local -r j=$(jobs)
     # When the shell is started, jobs reports a job matching this pattern has just
     # finished. This early exit prevents that edge case from causing us to say
     # that jobs are running.
@@ -106,7 +106,7 @@ jobsrunning() {
 
 gitreponame() {
     if git rev-parse &> /dev/null ; then
-        local path=$(git rev-parse --show-toplevel)
+        local -r path=$(git rev-parse --show-toplevel)
 
         # You can find the script at /usr/local/etc/bash_completion.d/git-prompt.sh
         echo -n " (${path##*/}/"
@@ -121,7 +121,7 @@ export PS1=                    # Clear PS1 and mark for export
 PS1+="\[$(tput setaf 15)\]"    # Set color to bright white
 #export PS1+="■▶ "             # Print a Unicode pointer
 PS1+="▶ "                      # Print a Unicode pointer
-PS1+="\! "                     # Print the history number, for use in history substitution
+# PS1+="\! "                     # Print the history number, for use in history substitution
 PS1+="\[$(tput setaf 6)\]"     # Set color to cyan
 PS1+="\W"                      # Current working dir
 PS1+="\[$(tput setaf 4)\]"     # Set color to blue
@@ -132,6 +132,8 @@ PS1+="\$(jobsrunning)"         # Print a % if there are jobs running
 PS1+="\[$(tput setaf 1)\]"     # Set color to red
 PS1+=" \\$ "                   # Literal dollar sign
 PS1+="\[$(tput sgr0)\]"        # Turn off colors
+
+HISTFILESIZE=10000
 
 # Make vim the default editor
 export EDITOR=vim
