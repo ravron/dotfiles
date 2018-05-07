@@ -134,6 +134,9 @@ PS1+=" \\$ "                   # Literal dollar sign
 PS1+="\[$(tput sgr0)\]"        # Turn off colors
 
 HISTFILESIZE=10000
+HISTSIZE=-1
+# Show 8601 dates before each history entry
+HISTTIMEFORMAT="%F %T "
 
 # Make vim the default editor
 export EDITOR=vim
