@@ -43,6 +43,9 @@ set report=0
 " Show lines that are wrapped with '> '
 set showbreak=>\
 
+" Show in-progress commands
+set showcmd
+
 " Set window title to name of file
 set title
 set titlestring=%f                  " relative path
