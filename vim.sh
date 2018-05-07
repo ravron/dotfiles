@@ -38,7 +38,7 @@ function package () {
     if [ -d "$expected_repo" ]; then
         (
         cd "$expected_repo"
-        local -r result=$(git pull)
+        local -r result=$(git -c 'color.ui=always' pull)
         echo "$expected_repo: $result"
         )
     else
@@ -60,6 +60,7 @@ package git@github.com:xolox/vim-easytags.git
 # Required by easytags
 package git@github.com:xolox/vim-misc.git
 package git@github.com:morhetz/gruvbox.git
+package git@github.com:leafgarland/typescript-vim.git
 
 # Wait for all outstanding jobs to terminate. Only necessary if running jobs in
 # background.
