@@ -141,6 +141,14 @@ HISTTIMEFORMAT="%F %T "
 # Make vim the default editor
 export EDITOR=vim
 
+LESS_ARR=(
+# Case insensitive searching if search term doesn't contain an uppercase letter
+'--ignore-case'
+# Output control characters directly. Useful to preserve color.
+'--raw-control-chars'
+)
+export LESS=${LESS_ARR[@]}
+
 # Location aliases
 alias src="cd ~/src"
 alias scratch="cd ~/scratch"
