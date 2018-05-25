@@ -126,6 +126,9 @@ set undofile
 " Undo save location
 set undodir=$HOME/.vim/undo
 
+" Spelling region is en_us
+set spelllang=en_us
+
 " Don't expand tabs in gitconfig files
 autocmd FileType gitconfig setlocal noexpandtab
 
