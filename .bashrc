@@ -115,6 +115,26 @@ gitreponame() {
     fi
 }
 
+gh()
+{
+    local ORIGIN_URL
+    ORIGIN_URL="$(git config --local remote.origin.url)" || return 1
+    ORIGIN_URL=${ORIGIN_URL/://}
+    ORIGIN_URL=${ORIGIN_URL/#git@/https://}
+    ORIGIN_URL=${ORIGIN_URL%.git}
+
+    local COMMIT_SHA
+
+    local COMMIT_REF="HEAD"
+
+    if [[ -n "$1" ]]; then
+        COMMIT_REF="$1"
+    fi
+
+    local -r COMMIT_SHA="$(git rev-parse "$COMMIT_REF")"
+    open "$ORIGIN_URL"/commit/"$COMMIT_SHA"
+}
+
 # check https://www.kirsle.net/wizards/ps1.html
 #export PS1="\W \u\[$(tput setaf 4)\]\$(__git_ps1 \" (%s)\")\[$(tput setaf 1)\]\\$ \[$(tput sgr0)\]"
 export PS1=                    # Clear PS1 and mark for export
