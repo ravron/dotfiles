@@ -85,3 +85,5 @@
 	smtpEncryption = tls
 	smtpServer = smtp.gmail.com
 	smtpServerPort = 587
+[core]
+	pager = less -FX

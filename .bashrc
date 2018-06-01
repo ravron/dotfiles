@@ -144,8 +144,8 @@ export EDITOR=vim
 LESS_ARR=(
 # Case insensitive searching if search term doesn't contain an uppercase letter
 '--ignore-case'
-# Output control characters directly. Useful to preserve color.
-'--raw-control-chars'
+# Output ANSI color control characters directly. Useful to preserve color.
+'--RAW-CONTROL-CHARS'
 )
 export LESS=${LESS_ARR[@]}
 
