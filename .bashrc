@@ -243,3 +243,6 @@ cds() {
 # export FZF_DEFAULT_OPTS='--preview "head -200 {}"'
 
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
+
+# See brew info go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
