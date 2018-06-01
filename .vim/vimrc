@@ -177,6 +177,9 @@ let g:easytags_async=1
 " beware) it slows things down like crazy when tags file is large.
 let g:easytags_auto_highlight=0
 
+" Tell gitgutter that my terminal doesn't know how to report focus.
+let g:gitgutter_terminal_reports_focus=0
+
 " Use actual tabs in Makefiles (they won't work with spaces)
 autocmd FileType make setlocal noexpandtab
 " Use two spaces in Ruby files
