@@ -1,15 +1,6 @@
-# Use this include to specify an email to use on this machine by default, and
-# optionally override it to your work email based on path to a given git
-# directory.
-#   git config --file ~/.config/git/private_config user.email <personal_email>
-#   git config --file ~/.config/git/private_config includeIf.gitdir:~/your/work/dir.path work_config
-#   git config --file ~/.config/git/work_config user.email <work_email>
-[include]
-	path = private_config
 [user]
 	name = Riley Avron
 	useConfigOnly = true
-
 [alias]
 	s = status
 	d = diff
@@ -19,7 +10,7 @@
 	ss = show --stat
 	fm = fetch origin master:master
 	p = pull
-	l = log --decorate-refs-exclude=\"tags/deployment*\" --decorate-refs-exclude=\"tags/scheduler-on-production*\"
+	l = log
 	dc = diff --cached
 	ls = log --stat
 	bv = branch -vv
@@ -87,3 +78,12 @@
 	smtpServerPort = 587
 [core]
 	pager = less -FX
+# Use this include to specify an email to use on this machine by default, and
+# optionally override it to your work email based on path to a given git
+# directory. Including it at the end makes sure any options specified there have
+# precedence over defaults specified above.
+#   git config --file ~/.config/git/private_config user.email <personal_email>
+#   git config --file ~/.config/git/private_config includeIf.gitdir:~/your/work/dir.path work_config
+#   git config --file ~/.config/git/work_config user.email <work_email>
+[include]
+	path = private_config
