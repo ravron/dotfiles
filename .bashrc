@@ -53,21 +53,12 @@ gitpic()
     #BOLDUSER='joebob'
 
     # eval: runs the command in $GITLOG (with extra args appended)
-    # sed: remove email domains
-    # sed: make author name bold cyan if it's equal to $BOLDUSER (which defaults to $USER)
-    # less: page that baby; remove the R flag to see raw ANSI escape codes
-
-#    eval $GITLOG | sed -E "s/@[a-zA-Z0-9.]+//" | \
-#        sed -E "s/${BOLDUSER}((\e[^m]*m)?:)/${BOLDCYAN}${BOLDUSER}\1/" | \
-#        less -FSRX
-
-    # eval: runs the command in $GITLOG (with extra args appended)
     # perl: remove email domains
     # perl: make author name bold cyan if it's equal to $BOLDUSER (which defaults to $USER)
     #       only replace author name if it's followed by a colon (with an
     #       optional ANSI escape in the middle), so that we don't also replace
     #       the username in something like a branch name
-    # less: page that baby; remove the R flag to see raw ANSI escape codes
+    # less: pager; remove the R flag to see raw ANSI escape codes
 
     eval $GITLOG | \
         perl -pe "s/@[a-zA-Z0-9.-]+//" | \
