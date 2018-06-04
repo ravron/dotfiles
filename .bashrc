@@ -31,7 +31,8 @@ gitpic()
     done
 
     # base command
-    local GITLOG="git log"
+    # use alias so we get any default args
+    local GITLOG="git l"
     # default options
     GITLOG+=" --color=always --graph"
     # format options
