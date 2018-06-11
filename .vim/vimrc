@@ -76,7 +76,7 @@ endfunction
 
 autocmd BufNewFile,BufRead .arcunit,.arclint set filetype=json
 " Highlight Python stub files like Python (because they are Python!)
-autocmd BufNewFile,BufRead *.pyi set ft=python
+autocmd BufNewFile,BufRead *.pyi set filetype=python
 " Treat any file matching *?config in any .config/git as a git config file
 autocmd BufNewFile,BufRead *.config/git/*?config set filetype=gitconfig
 " Treat any file matching *?config in ~/.ssh as an ssh config file
@@ -120,6 +120,8 @@ set ignorecase
 set smartcase
 " Write to swapfile and update vim-gitgutter more often
 set updatetime=250
+" Use one space between sentences, not two
+set nojoinspaces
 
 " Persistent undo
 set undofile
@@ -205,6 +207,9 @@ autocmd FileType json setlocal nofixeol
 
 " Turn on spellcheck for markdown files
 autocmd FileType markdown setlocal spell
+
+" Use two spaces in yaml files
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 " Don't allow the cursor to get within 3 lines of the bottom or top of screen
 set scrolloff=3
