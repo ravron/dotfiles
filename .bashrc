@@ -181,6 +181,8 @@ alias gdg="git branch --verbose | \
 # Make code completion for git work for g. See
 # /usr/local/etc/bash_completion.d/git-completion.bash
 __git_complete g __git_main
+__git_complete gitpic _git_log
+__git_complete gp _git_log
 
 # Use vim mode
 set -o vi
