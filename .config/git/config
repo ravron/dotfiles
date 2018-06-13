@@ -15,6 +15,7 @@
 	ls = log --stat
 	bv = branch -vv
 	noedit = commit --amend --no-edit
+	f = fetch
 [merge]
 [push]
 	default = upstream
