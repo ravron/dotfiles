@@ -79,6 +79,17 @@
 	smtpServerPort = 587
 [core]
 	pager = less -FX
+[pager]
+	log = diff-highlight | less -FX
+	show = diff-highlight | less -FX
+	diff = diff-highlight | less -FX
+[color "diff-highlight"]
+	# Derived by looking at the red and green colors in my colorscheme and
+	# dropping their HSB brightness "enough"
+	oldHighlight = "normal #731410"
+	newHighlight = "normal #4a4b0f"
+	oldReset = normal black
+	newReset = normal black
 # Use this include to specify an email to use on this machine by default, and
 # optionally override it to your work email based on path to a given git
 # directory. Including it at the end makes sure any options specified there have
