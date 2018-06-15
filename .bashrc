@@ -184,6 +184,10 @@ __git_complete g __git_main
 __git_complete gitpic _git_log
 __git_complete gp _git_log
 
+# Add diff-highlight executable to PATH. See
+# https://github.com/git/git/tree/master/contrib/diff-highlight
+export PATH="$(brew --prefix)/share/git-core/contrib/diff-highlight:$PATH"
+
 # Use vim mode
 set -o vi
 
