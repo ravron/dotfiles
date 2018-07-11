@@ -187,11 +187,15 @@ let g:gitgutter_terminal_reports_focus=0
 
 " Use actual tabs in Makefiles (they won't work with spaces)
 autocmd FileType make setlocal noexpandtab
+" Use actual tabs in files named exactly 'Makecfg' or 'Makerules'
+autocmd BufNewFile,BufRead Makecfg,Makerules setlocal noexpandtab
+
+" Use actual tabs in Go files
+autocmd FileType go setlocal noexpandtab
+
 " Use two spaces in Ruby files
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
-" Use actual tabs in files named exactly 'Makecfg' or 'Makerules'
-autocmd BufNewFile,BufRead Makecfg,Makerules setlocal noexpandtab
 
 " Use two spaces in .bmbf.yaml files
 autocmd BufRead *.bmbf.yaml setlocal shiftwidth=2 tabstop=2 textwidth=80
