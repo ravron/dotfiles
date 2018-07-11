@@ -24,7 +24,7 @@ set ttyfast
 " Detect filetypes
 filetype on
 " Highlight search terms
-" set hlsearch
+set hlsearch
 " Always display a statusline
 set laststatus=2
 
@@ -130,6 +130,9 @@ set undodir=$HOME/.vim/undo
 
 " Spelling region is en_us
 set spelllang=en_us
+
+" Map \c to clear highlight
+nnoremap <Leader>c :noh<CR>
 
 " Don't expand tabs in gitconfig files
 autocmd FileType gitconfig setlocal noexpandtab
