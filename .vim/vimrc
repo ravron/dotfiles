@@ -193,11 +193,10 @@ autocmd BufNewFile,BufRead Makecfg,Makerules setlocal noexpandtab
 " Use actual tabs in Go files
 autocmd FileType go setlocal noexpandtab
 
-" Use two spaces in Ruby files
+" Use two spaces in various files
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
-
-" Set shiftwidth to 4 for python
-autocmd FileType python setlocal shiftwidth=4 tabstop=4
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " Hard-wrap text in a Phabricator diff description or update message to 150 cols
 autocmd BufRead */edit.*/new-commit,*/edit.*/differential-update-comments setlocal textwidth=150
@@ -214,8 +213,6 @@ autocmd FileType markdown setlocal spell
 " Remove all trailing spaces on save in all files
 autocmd BufWrite * silent! %s/ \+$//
 
-" Use two spaces in yaml files
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 " Don't allow the cursor to get within 3 lines of the bottom or top of screen
 set scrolloff=3
