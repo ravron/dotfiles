@@ -196,10 +196,6 @@ autocmd FileType go setlocal noexpandtab
 " Use two spaces in Ruby files
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
-
-" Use two spaces in .bmbf.yaml files
-autocmd BufRead *.bmbf.yaml setlocal shiftwidth=2 tabstop=2 textwidth=80
-
 " Set shiftwidth to 4 for python
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
 
