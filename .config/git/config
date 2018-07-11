@@ -86,8 +86,8 @@
 [color "diff-highlight"]
 	# Derived by looking at the red and green colors in my colorscheme and
 	# dropping their HSB brightness "enough"
-	oldHighlight = "normal #731410"
-	newHighlight = "normal #4a4b0f"
+	oldHighlight = "normal #67120e"
+	newHighlight = "normal #40410d"
 	oldReset = normal black
 	newReset = normal black
 # Use this include to specify an email to use on this machine by default, and
