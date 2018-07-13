@@ -130,13 +130,13 @@ gh()
 setstatus() {
     local -r STATUS="$([[ -d .git ]] && git rev-parse --abbrev-ref HEAD || \
         echo "Not a repo")"
-    ~/.iterm2/it2setkeylabel set status "$STATUS"
+    ~/.iterm2/it2setkeylabel set status "$STATUS" &> /dev/null
 }
 
 # check https://www.kirsle.net/wizards/ps1.html
 #export PS1="\W \u\[$(tput setaf 4)\]\$(__git_ps1 \" (%s)\")\[$(tput setaf 1)\]\\$ \[$(tput sgr0)\]"
 export PS1=                    # Clear PS1 and mark for export
-PS1+='$(setstatus)'
+PS1+="\$(setstatus)"
 PS1+="\[$(tput setaf 15)\]"    # Set color to bright white
 #export PS1+="■▶ "             # Print a Unicode pointer
 PS1+="▶ "                      # Print a Unicode pointer
