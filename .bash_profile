@@ -2,5 +2,3 @@
 # start.
 # All configuration happens in .bashrc. Just source that.
 source ~/.bashrc
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
