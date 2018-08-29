@@ -32,9 +32,9 @@ set laststatus=2
 set statusline=%0.120F              " full path
 set statusline+=\ Win:%{winnr()}    " window number
 set statusline+=%m                  " modified flag
-set statusline+=%15.15c             " column number
 set statusline+=%=                  " middle divider
-set statusline+=%l/%L               " line number, total line
+set statusline+=%15.15c             " column number
+set statusline+=\ %l/%L             " line number, total line
 set statusline+=\ [%p%%]            " percent through file
 
 " 'Report,' or show on the command line, all changes
