@@ -250,3 +250,7 @@ export ANDROID_SDK_ROOT=~/Library/Android/sdk
 
 # See brew info go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+# See man fasd
+eval "$(fasd --init auto)"
+alias v='f -e vim'
