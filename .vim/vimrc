@@ -251,3 +251,7 @@ set scrolloff=3
 " Remap 'Y' in normal mode to yank to the end of the line rather than yank the
 " whole line. See :h Y
 nnoremap Y y$
+
+" Remap vim-gitgutter next hunk and previous hunk
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
