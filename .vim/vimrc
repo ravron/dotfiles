@@ -57,7 +57,8 @@ colorscheme gruvbox
 syntax enable
 
 " Show background color on entire cursor line
-set cursorline
+" Broken righ tnow, see https://github.com/vim/vim/issues/2584
+"set cursorline
 "highlight CursorLine ctermbg=NONE cterm=underline
 
 " Highlight json files like javascript
@@ -86,6 +87,8 @@ autocmd BufNewFile,BufRead ~/.ssh/*?config set filetype=sshconfig
 
 "" 2. Behavior
 
+" Allow mouse use
+set mouse=a
 " Make the backspace key work as expected
 set backspace=indent,eol,start
 " Don't put in actual <tab>s, use <space>s instead
