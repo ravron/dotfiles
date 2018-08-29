@@ -126,12 +126,20 @@ setstatus() {
     ~/.iterm2/it2setkeylabel set status "$STATUS" &> /dev/null
 }
 
+rgbcolor() {
+    # Pass three args, each in [0, 255] for RGB
+    if (( $# != 3 )) ; then
+        echo 'wrong number of args to rgbcolor' >&2
+        echo 'ERR'
+        return 1
+    fi
+    echo -n $'\E'"[38;2;$1;$2;$3m"
+}
+
 # check https://www.kirsle.net/wizards/ps1.html
-#export PS1="\W \u\[$(tput setaf 4)\]\$(__git_ps1 \" (%s)\")\[$(tput setaf 1)\]\\$ \[$(tput sgr0)\]"
 export PS1=                    # Clear PS1 and mark for export
 PS1+="\$(setstatus)"
-PS1+="\[$(tput setaf 15)\]"    # Set color to bright white
-#export PS1+="■▶ "             # Print a Unicode pointer
+PS1+="\[$(rgbcolor 255 255 255)\]"    # Set color to bright white
 PS1+="▶ "                      # Print a Unicode pointer
 # PS1+="\! "                     # Print the history number, for use in history substitution
 PS1+="\[$(tput setaf 6)\]"     # Set color to cyan
