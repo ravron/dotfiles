@@ -84,14 +84,7 @@ if [ -f /usr/local/share/bash-completion/bash_completion ]; then
 fi
 
 jobsrunning() {
-    local -r j=$(jobs)
-    # When the shell is started, jobs reports a job matching this pattern has just
-    # finished. This early exit prevents that edge case from causing us to say
-    # that jobs are running.
-    if [[ $j == *SHELL_SESSION_HISTFILE_NEW* ]] ; then
-        exit
-    fi
-    if [ "$j" ] ; then
+    if [[ -n $(jobs -r) ]] ; then
         echo -n ' %'
     fi
 }
