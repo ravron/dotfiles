@@ -231,8 +231,13 @@ autocmd FileType json setlocal nofixeol
 " Turn on spellcheck for markdown files
 autocmd FileType markdown setlocal spell
 
-" Remove all trailing spaces on save in all files
-autocmd BufWrite * silent! %s/ \+$//
+" Remove all trailing spaces on save in listed file types
+" See https://vi.stackexchange.com/a/3971/5598
+augroup TrailingSpace
+    autocmd!
+    autocmd FileType c,cpp,python,markdown,javascript,typescript
+        \ autocmd! TrailingSpace BufWrite <buffer> silent! %s/ \+$//
+augroup END
 
 
 " Don't allow the cursor to get within 3 lines of the bottom or top of screen
