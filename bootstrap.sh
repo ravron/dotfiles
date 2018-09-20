@@ -122,12 +122,12 @@ TO_LINK_ARR=()
 # read null-delimited directory names from find -print0 into DIRS_ARR
 while IFS= read -r -d '' DIR; do
     # remove leading './'
-    DIR=$(cut -c 3- <<<"$DIR")
+    DIR="${DIR:2}"
     DIRS_ARR+=("$DIR")
 done < <(find_paths d)
 
 while IFS= read -r -d '' FILE; do
-    FILE=$(cut -c 3- <<<"$FILE")
+    FILE="${FILE:2}"
     TO_LINK_ARR+=("$FILE")
 done < <(find_paths f)
 
