@@ -127,6 +127,7 @@ while IFS= read -r -d '' DIR; do
 done < <(find_paths d)
 
 while IFS= read -r -d '' FILE; do
+    # remove leading './'
     FILE="${FILE:2}"
     TO_LINK_ARR+=("$FILE")
 done < <(find_paths f)
