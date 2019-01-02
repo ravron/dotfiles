@@ -17,8 +17,10 @@
 
 "" 1. Appearance
 
-" Show line numbers
+" Show line number at cursor
 set number
+" Show relative numbers other than at cursor
+set relativenumber
 " Don't restrict draw speed
 set ttyfast
 " Detect filetypes
