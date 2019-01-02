@@ -168,6 +168,12 @@ LESS_ARR=(
 '--RAW-CONTROL-CHARS'
 )
 export LESS=${LESS_ARR[@]}
+# Set the control codes less emits for certain text attributes
+# https://unix.stackexchange.com/a/108840/41650
+export LESS_TERMCAP_md=$(tput setaf 3)  # yellow for starting bold
+export LESS_TERMCAP_us=$(tput setaf 4)  # blue for starting underline
+export LESS_TERMCAP_me=$(tput sgr0)  # reset for ending bold
+export LESS_TERMCAP_ue=$(tput sgr0)  # reset for ending underline
 
 # Location aliases
 alias src="cd ~/src"
