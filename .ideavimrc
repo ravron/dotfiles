@@ -1,0 +1,4 @@
+" Show line number at cursor
+set number
+" Show relative numbers other than at cursor
+set relativenumber
