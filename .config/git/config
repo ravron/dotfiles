@@ -17,7 +17,8 @@
 	noedit = commit --amend --no-edit
 	f = fetch
 	co = commit
-[merge]
+[fetch]
+	prune = true
 [push]
 	default = upstream
 	# I'd like this, but it started failing on 2016-10-05
