@@ -39,23 +39,26 @@ find_paths() {
 
 check_file() {
     local -r DEST_FILE="$HOME/$1"
-    # if file exists
-    if [[ -e "$DEST_FILE" ]]; then
-        # if the file is a symlnk and the symlink's target is exactly $DEST_FILE
-        if [[ -h "$DEST_FILE" &&
-            $(readlink "$DEST_FILE") == "$PWD/$1" ]]; then
-            # then it's already correct and doesn't need linking
-            return 0
-        fi
-        # else it exists and is incorrect! don't overwrite
-        return 1
+
+    # if the file doesn't exist, we're good
+    if ! [[ -e "$DEST_FILE" ]]; then
+        return 0
     fi
-    # else it doesn't exist
-    return 0
+
+    # if the file is a symlnk and the symlink's target is exactly $DEST_FILE
+    if [[ -h "$DEST_FILE" &&
+        $(readlink "$DEST_FILE") == "$PWD/$1" ]]; then
+        # then it's already correct and doesn't need linking
+        return 0
+    fi
+
+    # else it exists and is incorrect! don't overwrite
+    return 1
 }
 
 process_dir() {
     local -r DEST_DIR="$HOME/$1"
+
     if [[ -d "$DEST_DIR" ]]; then
         # already exists
         return
@@ -72,15 +75,16 @@ process_dir() {
 
 process_file() {
     local -r DEST_FILE="$HOME/$1"
+    
     # if the file is a symlnk and the symlink's target is exactly $DEST_FILE
-    if [[ -e "$DEST_FILE" ]]; then
-        if [[ -h "$DEST_FILE" &&
-            $(readlink "$DEST_FILE") == "$PWD/$1" ]]; then
-            # then it's already correct and doesn't need linking
-            return
-        fi
+    if [[ -h "$DEST_FILE" &&
+        $(readlink "$DEST_FILE") == "$PWD/$1" ]]; then
+        # then it's already correct and doesn't need linking
+        return
+    fi
 
-        # else it exists and isn't a symlink or doesn't point to the right place
+    if [[ -e "$DEST_FILE" ]]; then
+        # it exists and isn't a symlink or doesn't point to the right place
         # already. this should have been caught in check_file, but never hurts
         # to be paranoid.
         die "unexpected file exists after check_file"
