@@ -1,0 +1,28 @@
+{
+  "title": "Caps Lock on L+R shift",
+  "rules": [
+    {
+      "description": "Toggle caps lock by pressing both shift keys",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "left_shift"
+              },
+              {
+                "key_code": "right_shift"
+              }
+            ]
+          },
+          "to": [
+            {
+              "key_code": "caps_lock"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
