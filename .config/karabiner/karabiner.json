@@ -79,7 +79,6 @@
                         "description": "Toggle caps lock by pressing both shift keys",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "simultaneous": [
                                         {
@@ -94,7 +93,8 @@
                                     {
                                         "key_code": "caps_lock"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     }
@@ -328,14 +328,6 @@
                     },
                     "to": {
                         "key_code": "escape"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "escape"
-                    },
-                    "to": {
-                        "key_code": "caps_lock"
                     }
                 }
             ],
