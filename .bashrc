@@ -257,6 +257,12 @@ export ANDROID_SDK_ROOT=~/Library/Android/sdk
 # See brew info go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
+# Get installed go binaries in PATH
+export PATH=$PATH:/Users/ravron/src/go/bin
+
 # See man fasd
 eval "$(fasd --init auto)"
 alias v='f -e vim'
+
+# See go help modules
+export GO111MODULE=on

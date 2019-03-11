@@ -87,12 +87,7 @@
                                         {
                                             "key_code": "right_shift"
                                         }
-                                    ],
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
+                                    ]
                                 },
                                 "to": [
                                     {
