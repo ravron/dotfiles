@@ -127,6 +127,11 @@ set smartcase
 set updatetime=250
 " Use one space between sentences, not two
 set nojoinspaces
+" Send things to the system clipboard rather than the unnamed register
+set clipboard=unnamed
+" [g]lobally substitute by default. Use g flag to disable.
+" See :h :s_g
+set gdefault
 
 " Persistent undo
 set undofile
