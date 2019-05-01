@@ -1,4 +1,8 @@
 " Show line number at cursor
 set number
 " Show relative numbers other than at cursor
-set relativenumber
+" This doesn't play nicely with annotations :(
+" set relativenumber
+set clipboard=unnamed
+
+nnoremap Y y$
