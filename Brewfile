@@ -80,8 +80,8 @@ brew "perl"
 brew "pngquant"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
-# Python version management
-brew "pyenv"
+# QR Code generation
+brew "qrencode"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Feature-rich console based todo list manager
@@ -102,6 +102,7 @@ cask "1password"
 cask "android-platform-tools"
 cask "android-studio"
 cask "charles"
+cask "day-o"
 cask "goland"
 cask "google-chrome"
 cask "iterm2"
