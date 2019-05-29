@@ -45,7 +45,7 @@ check_file() {
         return 0
     fi
 
-    # if the file is a symlnk and the symlink's target is exactly $DEST_FILE
+    # if the file is a symlink and the symlink's target is exactly $DEST_FILE
     if [[ -h "$DEST_FILE" &&
         $(readlink "$DEST_FILE") == "$PWD/$1" ]]; then
         # then it's already correct and doesn't need linking
