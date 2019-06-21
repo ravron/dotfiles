@@ -229,13 +229,18 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 [ -f ~/.bashrc_private ] && source ~/.bashrc_private
 
-# set +x
-# exec 2>&3 3>&-
 
-# See brew info nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
-[ -s "/usr/local/etc/bash_completion.d/nvm" ] && \. "/usr/local/etc/bash_completion.d/nvm"
+# nvm's setup is slow and I don't use it often. Lazy load it by wrapping it in
+# a function by the same name. When first invoked in a session, unset the
+# wrapper, load the real nvm, and invoke it with the provided parameters.
+nvm() {
+    unset ${FUNCNAME[0]}
+    # See brew info nvm
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+    [ -s "/usr/local/etc/bash_completion.d/nvm" ] && \. "/usr/local/etc/bash_completion.d/nvm"
+    nvm "$@"
+}
 
 # See brew info fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
