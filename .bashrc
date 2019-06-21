@@ -244,7 +244,7 @@ nvm() {
     [ -s "/usr/local/etc/bash_completion.d/nvm" ] && \. "/usr/local/etc/bash_completion.d/nvm"
     nvm "$@"
 }
-export PATH=$PATH:$(cd ~/.nvm/current ; pwd -P)/bin
+export PATH=$PATH:~/.nvm/current/bin
 
 # See brew info fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
