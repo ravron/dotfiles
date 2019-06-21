@@ -229,10 +229,13 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 [ -f ~/.bashrc_private ] && source ~/.bashrc_private
 
-
-# nvm's setup is slow and I don't use it often. Lazy load it by wrapping it in
-# a function by the same name. When first invoked in a session, unset the
-# wrapper, load the real nvm, and invoke it with the provided parameters.
+# nvm's setup is slow and I don't use it often. Lazy load it by wrapping it in a
+# function by the same name. When first invoked in a session, unset the wrapper,
+# load the real nvm, and invoke it with the provided parameters. The
+# NVM_SYMLINK_CURRENT causes nvm to create a symlink to the current node at
+# ~/.nvm/current. It's not great, because it breaks the session model of nvm,
+# but I almost never change it anyways, and that fixes tools like WebStorm.
+export NVM_SYMLINK_CURRENT=true
 nvm() {
     unset ${FUNCNAME[0]}
     # See brew info nvm
@@ -241,6 +244,7 @@ nvm() {
     [ -s "/usr/local/etc/bash_completion.d/nvm" ] && \. "/usr/local/etc/bash_completion.d/nvm"
     nvm "$@"
 }
+export PATH=$PATH:$(cd ~/.nvm/current ; pwd -P)/bin
 
 # See brew info fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
