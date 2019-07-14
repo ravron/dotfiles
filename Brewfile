@@ -4,6 +4,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "versent/taps"
 # Automatic configure script builder
 brew "autoconf"
 # SSL/TLS cryptography library
@@ -23,7 +24,7 @@ brew "bash"
 # Programmable completion for Bash 4.1+
 brew "bash-completion@2"
 # Dependency manager for Cocoa projects
-brew "cocoapods"
+brew "cocoapods", link: false
 # Configurable talking characters in ASCII art
 brew "cowsay"
 # Reduce a C/C++ program while keeping a property of interest
@@ -48,24 +49,32 @@ brew "fswatch"
 brew "fzf"
 # GNU awk utility
 brew "gawk"
+# GIF image/animation creator/editor
+brew "gifsicle"
 # Distributed revision control system
 brew "git"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
-brew "gnupg", link: false
+brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Interpreted, interactive, object-oriented programming language
-brew "python@2"
 # Next generation open source RPC library and framework
 brew "grpc"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
 # Add GitHub support to git on the command-line
 brew "hub"
+# Configurable static site generator
+brew "hugo"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Intercept, modify, replay, save HTTP/S traffic
 brew "mitmproxy"
+# Interpreted, interactive, object-oriented programming language
+brew "python@2"
+# Experimental optional static type checker for Python
+brew "mypy"
 # Open source relational database management system
 brew "mysql"
 # Network grep
@@ -96,8 +105,11 @@ brew "watch"
 brew "ykman"
 # General-purpose lossless data-compression library
 brew "zlib"
+# UNIX shell (command interpreter)
+brew "zsh"
 # Recursively search directories for a regex pattern.
 brew "burntsushi/ripgrep/ripgrep-bin"
+brew "versent/taps/saml2aws"
 cask "1password"
 cask "android-platform-tools"
 cask "android-studio"
