@@ -62,6 +62,8 @@ package git@github.com:xolox/vim-misc.git
 package git@github.com:morhetz/gruvbox.git
 package git@github.com:leafgarland/typescript-vim.git
 package git@github.com:cespare/vim-toml.git
+package git@github.com:junegunn/fzf.git
+package git@github.com:junegunn/fzf.vim.git
 
 # Wait for all outstanding jobs to terminate. Only necessary if running jobs in
 # background.
