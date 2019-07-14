@@ -59,7 +59,7 @@
 [rebase]
 	autoStash = true
 [status]
-	submoduleSummary = true
+	submoduleSummary = 10
 [interactive]
 	singleKey = true
 [branch]
