@@ -1,13 +1,6 @@
-# PS4='+ $(gdate "+%s.%N")\011 '
-# exec 3>&2 2>/tmp/bashstart.$$.log
-# set -x
-
-echocmd()
-{
-    echo "$ $@"
-    "$@"
-    return
-}
+#PS4='+ $EPOCHREALTIME\011 '
+#exec 3>&2 2>/tmp/bashstart.$$.log
+#set -x
 
 gitpic()
 {
@@ -191,6 +184,12 @@ alias gdg="git branch --verbose | \
     grep --fixed-strings [gone] | \
     awk '!/^\*/ {print \$1}' | \
     xargs git branch --delete --force"
+alias s2a="saml2aws login \
+    --force \
+    --profile default \
+    --duo-mfa-option Passcode \
+    --skip-prompt"
+# alias vo='vim $(fzf --height 30%)'
 
 # Make code completion for git work for g. See
 # /usr/local/etc/bash_completion.d/git-completion.bash
@@ -275,3 +274,6 @@ alias v='f -e vim'
 
 # See go help modules
 export GO111MODULE=on
+
+#set +x
+#exec 2>&3 3>&-
