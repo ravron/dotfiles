@@ -23,10 +23,10 @@ fi
 # Install or upgrade everything in the Brewfile
 brew bundle install
 
-# Switch to using brew-installed bash as default shell
-if ! grep -q '/usr/local/bin/bash' /etc/shells; then
-    echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
-    chsh -s /usr/local/bin/bash
+# Switch to using brew-installed zsh as default shell
+if ! grep -q '/usr/local/bin/zsh' /etc/shells; then
+    echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells
+    chsh -s /usr/local/bin/zsh
 fi;
 
 # Enable fzf autocomplete and fuzzy-finding in bash
@@ -35,7 +35,7 @@ $(brew --prefix)/opt/fzf/install \
     --key-bindings \
     --completion \
     --no-update-rc \
-    --no-zsh \
+    --no-bash \
     --no-fish
 
 # git send-email uses perl, but requires additional perl modules. Further, git
@@ -51,7 +51,7 @@ $(brew --prefix)/opt/fzf/install \
 # apparently doesn't come standard with the brew perl. Maybe this isn't worth it
 # just to get send-email working.
 # -T: don't run tests
-cpan -T Net::SMTP::SSL MIME::Base64 Authen::SASL Term::ReadKey 2>/dev/null
+# cpan -T Net::SMTP::SSL MIME::Base64 Authen::SASL Term::ReadKey 2>/dev/null
 
 # Remove outdated versions from the cellar.
 brew cleanup
