@@ -89,6 +89,13 @@ autocmd BufNewFile,BufRead ~/.ssh/*?config set filetype=sshconfig
 
 "" 2. Behavior
 
+" Set leader to space
+nnoremap <space> <nop>
+let mapleader=" "
+
+" Disable gq to train myself to use the better gw instead
+nnoremap gq :echoerr 'Use gw instead!'<CR>
+
 " Allow mouse use
 set mouse=a
 " Make the backspace key work as expected
@@ -116,7 +123,7 @@ set splitbelow
 " Split new windows to the right of current window
 set splitright
 " Set key sequence timeout in ms
-set timeoutlen=300
+set timeoutlen=500
 " Use autoindent
 set autoindent
 " Ignore case by default...
@@ -201,6 +208,8 @@ highlight def StatusLineUnmodifiableNC  term=reverse cterm=reverse ctermfg=240 c
 
 "" 2. Behavior
 
+" Uses plugin fzf.vim
+nnoremap <Leader>f :GFiles<cr>
 
 " See https://github.com/xolox/vim-easytags/blob/master/README.md Do tag updates
 " in the background
