@@ -162,10 +162,10 @@ export FZF_ALT_C_COMMAND='fd --type directory'
 # See /usr/local/opt/fzf/shell/completion.zsh
 _fzf_compgen_path() {
     echo "$1"
-    fd --hidden --follow --type directory --type file --type symlink --exclude .git "$1"
+    fd --hidden --follow --type directory --type file --type symlink --exclude .git . "$1"
 }
 _fzf_compgen_dir() {
-    fd --hidden --follow --type directory --exclude .git "$1"
+    fd --hidden --follow --type directory --exclude .git . "$1"
 }
 
 # See man fasd
