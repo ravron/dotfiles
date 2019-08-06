@@ -81,6 +81,7 @@
 	smtpServerPort = 587
 [core]
 	pager = less -FX
+	sparseCheckout = true
 [pager]
 	log = diff-highlight | less -FX
 	show = diff-highlight | less -FX
