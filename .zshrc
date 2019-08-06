@@ -98,7 +98,7 @@ alias date8601="date -u +'%Y-%m-%dT%H:%M:%SZ'"
 # (or try to git branch -D * !!)
 # gdg for "git delete gone"
 alias gdg="git branch --verbose | \
-    grep --fixed-strings [gone] | \
+    grep --fixed-strings '[gone]' | \
     awk '!/^\*/ {print \$1}' | \
     xargs git branch --delete --force"
 alias s2a="saml2aws login \
