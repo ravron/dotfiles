@@ -111,8 +111,10 @@ alias s2a="saml2aws login \
 # Makes ls color its output
 export CLICOLOR=1
 export LSCOLORS=gxFxCxDxbxexexaxaxaxex
-# For `tree`
-export LS_COLORS=${LSCOLORS}
+# For `tree`. Convert from LSCOLORS above via https://geoff.greer.fm/lscolors/
+export LS_COLORS='di=36:ln=1;35:so=1;32:pi=1;33:ex=31:bd=34:cd=34:su=30:sg=30:tw=30:ow=34'
+# Would normally go in a previous section but makes most sense here
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Makes grep always color its output unless piped elsewhere
 export GREP_OPTIONS='--color=auto'
