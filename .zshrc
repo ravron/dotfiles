@@ -12,6 +12,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Get private configuration
+[[ -f ~/.zshrc_private ]] && source ~/.zshrc_private
+
 # Make `run-help` work. 
 # See http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Accessing-On_002dLine-Help
 alias run-help &>/dev/null && unalias run-help
