@@ -85,6 +85,10 @@ PROMPT+='%f'
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 
+## Misc zsh
+# Turn off inverse on pasted text
+zle_highlight=('paste:none')
+
 ## Command aliases
 alias ll="ls -ahl"
 alias g="git"
