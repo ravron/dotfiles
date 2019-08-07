@@ -17,6 +17,9 @@
 	noedit = commit --amend --no-edit
 	f = fetch
 	co = commit
+	cf = !b=$(git branch -vv | sed 's/^*/ /' | fzf -n1 --height=20% | awk '{print $1}') ";" [[ -n $b ]] && git checkout $b
+	cfr = !b=$(git branch -avv | sed 's/^*/ /' | fzf -n1 --height=20% | awk '{print $1}') ";" [[ -n $b ]] && git checkout $b
+	cfp = !b=$(git branch -vv | sed 's/^*/ /' | fzf -n1 --preview='git show --color=always {1}' --preview-window=up:70% | awk '{print $1}') ";" [[ -n $b ]] && git checkout $b
 [fetch]
 	prune = true
 [push]
