@@ -175,6 +175,8 @@ _fzf_compgen_dir() {
 eval "$(fasd --init auto)"
 alias v='f -e vim'
 
+export RIPGREP_CONFIG_PATH=~/.config/rg/rg_config
+
 ## Add things to the PATH
 # For an explanation of how this `path+=…` works, see
 # http://zsh.sourceforge.net/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell
