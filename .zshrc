@@ -199,7 +199,7 @@ gitpic() {
             -w|--when)
                 # see below for behavior triggered by -w|--when
                 local WHEN=1
-                unset ARGARR[$I]
+                argv[$I]=
                 ;;
             -h|--help)
                 echo -en "Prints a pretty git ancestry tree.\n"\
@@ -222,7 +222,7 @@ gitpic() {
     if [[ -n $WHEN ]]; then
         # -w|--when appends a relative date to the end of the log line (e.g., "two
         # days ago")
-        GITLOG+=('--date=relative' '--pretty=format:%C(auto)%h%d %ae%C(reset): %s (%cd)')
+        GITLOG+=('--date=human' '--pretty=format:%C(auto)%h%d %ae%C(reset): %s (%cd)')
     else
         GITLOG+=('--pretty=format:%C(auto)%h%d %ae%C(reset): %s')
     fi
