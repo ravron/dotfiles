@@ -5,7 +5,7 @@
 	s = status
 	d = diff
 	b = branch
-	c = checkout
+	c = !echo \"use switch or restore instead\" && false
 	ds = diff --stat --summary
 	ss = show --stat
 	fm = fetch origin master:master
