@@ -338,6 +338,14 @@
                     "to": {
                         "key_code": "escape"
                     }
+                },
+                {
+                    "from": {
+                        "key_code": "insert"
+                    },
+                    "to": {
+                        "key_code": "vk_none"
+                    }
                 }
             ],
             "virtual_hid_keyboard": {
