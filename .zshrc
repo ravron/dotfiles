@@ -189,6 +189,8 @@ path+="$(brew --prefix)/share/git-core/contrib/diff-highlight"
 # https://github.com/Homebrew/homebrew-core/issues/15746
 path=("/usr/local/opt/python/libexec/bin" $path)
 
+path+=~/src/go/bin
+
 ## Custom functionality
 gitpic() {
     # filter out arguments *I* want to recognize; pass the rest on to git log
