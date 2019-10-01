@@ -131,10 +131,13 @@ LESS_ARR=(
 export LESS=${LESS_ARR[@]}
 # Set the control codes less emits for certain text attributes
 # https://unix.stackexchange.com/a/108840/41650
-export LESS_TERMCAP_md=$(tput setaf 3)  # yellow for starting bold
-export LESS_TERMCAP_us=$(tput setaf 4)  # blue for starting underline
-export LESS_TERMCAP_me=$(tput sgr0)  # reset for ending bold
-export LESS_TERMCAP_ue=$(tput sgr0)  # reset for ending underline
+# Convoluted way to get zsh to generate our cyan color for us. (%) tells it to
+# do prompt expansion on the result. :- lets us provide a word directly with
+# no variable. Must quote word to prevent closing brace being seen.
+export LESS_TERMCAP_md="${(%):-"%F{yellow}"}"  # yellow for starting bold
+export LESS_TERMCAP_us="${(%):-"%F{blue}"}"  # blue for starting underline
+export LESS_TERMCAP_me="${(%):-"%f"}"  # reset for ending bold
+export LESS_TERMCAP_ue="${(%):-"%f"}"  # reset for ending underline
 
 # nvm's setup is slow and I don't use it often. Lazy load it by wrapping it in a
 # function by the same name. When first invoked in a session, unset the wrapper,
