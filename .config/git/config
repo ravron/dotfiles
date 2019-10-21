@@ -1,6 +1,7 @@
 [user]
 	name = Riley Avron
 	useConfigOnly = true
+	signingKey = DE8E01726203B66DC3C5FC7DF2456F8F1804DE5B
 [alias]
 	s = status
 	d = diff
@@ -73,6 +74,7 @@
 	# autoSetupMerge = always
 [commit]
 	verbose = true
+	gpgSign = true
 [format]
 	pretty = fuller
 [rerere]

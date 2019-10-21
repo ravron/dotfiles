@@ -119,6 +119,9 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # Makes grep always color its output unless piped elsewhere
 export GREP_OPTIONS='--color=auto'
 
+# Lets gpg's pinentry ask for a PIN when needed
+export GPG_TTY=$(tty)
+
 # Make vim the default editor
 export EDITOR=vim
 
