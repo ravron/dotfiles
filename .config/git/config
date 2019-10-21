@@ -29,8 +29,7 @@
 	prune = true
 [push]
 	default = upstream
-	# I'd like this, but it started failing on 2016-10-05
-	# recurseSubmodules = check
+	recurseSubmodules = check
 [log]
 	decorate = true
 	date = iso-local
