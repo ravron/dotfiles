@@ -84,6 +84,7 @@ autocmd BufNewFile,BufRead *.pyi set filetype=python
 autocmd BufNewFile,BufRead *.config/git/*?config set filetype=gitconfig
 " Treat any file matching *?config in ~/.ssh as an ssh config file
 autocmd BufNewFile,BufRead ~/.ssh/*?config set filetype=sshconfig
+autocmd BufNewFile,BufRead *.make set filetype=make
 
 
 
