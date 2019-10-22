@@ -150,7 +150,7 @@ export LESS_TERMCAP_ue="${(%):-"%f"}"  # reset for ending underline
 # but I almost never change it anyways, and that fixes tools like WebStorm.
 export NVM_SYMLINK_CURRENT=true
 nvm() {
-    unset nvm
+    unfunction nvm
     # See brew info nvm
     export NVM_DIR="$HOME/.nvm"
     [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
