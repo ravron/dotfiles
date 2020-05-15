@@ -248,19 +248,30 @@ autocmd FileType json setlocal nofixeol
 " Turn on spellcheck for markdown files
 autocmd FileType markdown setlocal spell
 
+" https://vi.stackexchange.com/a/5952/5598
+function! StripTrailingWhitespace()
+    " Save cursor position
+    let l:save = winsaveview()
+    " Remove trailing whitespace
+    if &ft ==# 'markdown'
+        " For markdown, only modify a run of spaces if it's either of length three
+        " or greater, or is of length one. Trailing double-space in markdown has a
+        " semantic meaning.
+        %sm/ \{3,}$\|[^ ]\zs $//e
+    else
+        %sm/ \+$//e
+    endif
+    " Move cursor to original position
+    call winrestview(l:save)
+endfunction
+
 " Remove all trailing spaces on save in listed file types
 " See https://vi.stackexchange.com/a/3971/5598
 augroup TrailingSpace
     autocmd!
     " Use silent! to ignore errors and messages
-    " Use norm `` to jump back to the cursor location after the substitute
-    autocmd FileType c,cpp,python,javascript,typescript
-        \ autocmd! TrailingSpace BufWrite <buffer> silent! %sm/ \+$// | norm ``
-    " For markdown, only modify a run of spaces if it's either of length three
-    " or greater, or is of length one. Trailing double-space in markdown has a
-    " semantic meaning.
-    autocmd FileType markdown
-        \ autocmd! TrailingSpace BufWrite <buffer> silent! %sm/ \{3,}$\|[^ ]\zs $// | norm ``
+    autocmd FileType c,cpp,javascript,markdown,python,typescript
+        \ autocmd! TrailingSpace BufWrite <buffer> silent! call StripTrailingWhitespace()
 augroup END
 
 
