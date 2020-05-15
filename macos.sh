@@ -401,6 +401,13 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 cp -R init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
 
 ###############################################################################
+# Brave.app                                                               #
+###############################################################################
+
+# Disable the swipe to navigate history gesture
+defaults write com.brave.Browser AppleEnableSwipeNavigateWithScrolls -bool false
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
