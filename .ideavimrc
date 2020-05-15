@@ -6,4 +6,4 @@ set number
 set clipboard=unnamed
 
 nnoremap Y y$
-set ideajoinset clipboard+=ideaput
+set ideajoinset clipboard+=ideaputset ideajoin ideaput
