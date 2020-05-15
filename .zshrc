@@ -1,8 +1,5 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt appendhistory beep nomatch extendedglob
+setopt nolistbeep beep nomatch extendedglob
 unsetopt autocd notify
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -80,6 +77,9 @@ PROMPT+='$ '
 # Turn off colors
 PROMPT+='%f'
 
+## Completion
+zstyle ':completion:*' menu yes select search
+
 ## Key bindings
 # Use vim bindings
 bindkey -v
@@ -88,6 +88,18 @@ bindkey "^R" history-incremental-search-backward
 ## Misc zsh
 # Turn off inverse on pasted text
 zle_highlight=('paste:none')
+
+## History
+# See man zshoptions
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+# histignoredups: don't store adjacent duplicate lines
+# histverify: rather than just executing history expansion, expand and then
+# redraw prompt
+# incappendhistory: append to hist file after every command. won't pull history
+# into shell session except at startup, so per-shell history stays coherent.
+setopt histignoredups histverify incappendhistory
 
 ## Command aliases
 alias ll="ls -ahl"
@@ -252,3 +264,6 @@ gitpic() {
         perl -pe "s/${BOLDUSER}((?:\e[^m]*?m)?:)/${BOLDCYAN}${BOLDUSER}\1/" | \
         less -FSRX
 }
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
