@@ -244,8 +244,8 @@ autocmd FileType crontab setlocal nobackup nowritebackup
 " Don't change the eol on json files
 autocmd FileType json setlocal nofixeol
 
-" Turn on spellcheck for markdown files
-autocmd FileType markdown setlocal spell
+" Turn on spellcheck for certain files
+autocmd FileType gitcommit,markdown setlocal spell
 
 " https://vi.stackexchange.com/a/5952/5598
 function! StripTrailingWhitespace()
