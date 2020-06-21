@@ -149,8 +149,10 @@ set undodir=$HOME/.vim/undo
 " Spelling region is en_us
 set spelllang=en_us
 
-" Map \c to clear highlight
+" Map <Leader>c to clear highlight
 nnoremap <Leader>c :noh<CR>
+" Map <Leader>o to :FZF to open files
+nnoremap <Leader>o :FZF<CR>
 
 " Don't expand tabs in gitconfig files
 autocmd FileType gitconfig setlocal noexpandtab
