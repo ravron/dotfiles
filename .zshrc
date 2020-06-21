@@ -102,6 +102,8 @@ SAVEHIST=10000
 setopt histignoredups histverify incappendhistory
 
 ## Command aliases
+alias vi="nvim"
+alias vim="nvim"
 alias ll="ls -ahl"
 alias g="git"
 alias gp="gitpic"
