@@ -204,8 +204,8 @@ path+="$(brew --prefix)/share/git-core/contrib/diff-highlight"
 
 # Get `python` to be brew python, see `brew info python` and
 # https://github.com/Homebrew/homebrew-core/issues/15746
-# path=("/usr/local/opt/python/libexec/bin" $path)
-path=("/usr/local/opt/python@3.8/bin" $path)
+path=("/usr/local/opt/python/libexec/bin" $path)
+# path=("/usr/local/opt/python@3.8/bin" $path)
 
 path+=~/src/go/bin
 
