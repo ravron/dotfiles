@@ -269,7 +269,7 @@ endfunction
 augroup TrailingSpace
     autocmd!
     " Use silent! to ignore errors and messages
-    autocmd FileType c,cpp,javascript,markdown,python,typescript,yaml
+    autocmd FileType c,cpp,javascript,markdown,python,toml,typescript,yaml
         \ autocmd! TrailingSpace BufWrite <buffer> silent! call StripTrailingWhitespace()
 augroup END
 
