@@ -7,8 +7,6 @@ tap "homebrew/services"
 tap "versent/taps"
 # Automatic configure script builder
 brew "autoconf"
-# SSL/TLS cryptography library
-brew "openssl"
 # Library for command-line editing
 brew "readline"
 # Command-line interface for SQLite
@@ -16,29 +14,27 @@ brew "sqlite"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Interpreted, interactive, object-oriented programming language
-brew "python"
+brew "python@3.8", link: true
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 4.1+
 brew "bash-completion@2"
-# Dependency manager for Cocoa projects
-brew "cocoapods", link: false
+# Core application library for C
+brew "glib"
 # Configurable talking characters in ASCII art
 brew "cowsay"
 # Reduce a C/C++ program while keeping a property of interest
 brew "creduce"
 # Reimplementation of ctags(1)
 brew "ctags"
-# Tools and libraries to manipulate images in many formats
-brew "imagemagick", args: ["with-librsvg"]
-# Read and write data matrix barcodes
-brew "dmtx-utils", link: false
 # CLI tool for quick access to files and directories
 brew "fasd"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Banner-like program prints strings as ASCII art
@@ -49,6 +45,8 @@ brew "fswatch"
 brew "fzf"
 # GNU awk utility
 brew "gawk"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
 # GIF image/animation creator/editor
 brew "gifsicle"
 # Distributed revision control system
@@ -67,38 +65,50 @@ brew "httpie"
 brew "hub"
 # Configurable static site generator
 brew "hugo"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Update of iperf: measures TCP, UDP, and SCTP bandwidth
+brew "iperf3"
+# Small utility for manipulating IPv6 addresses
+brew "ipv6calc"
+# JSON output from a shell
+brew "jo"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Library to render SVG files using Cairo
+brew "librsvg"
+# Securely transfers data between computers
+brew "magic-wormhole"
 # Intercept, modify, replay, save HTTP/S traffic
 brew "mitmproxy"
-# Interpreted, interactive, object-oriented programming language
-brew "python@2"
 # Experimental optional static type checker for Python
 brew "mypy"
 # Open source relational database management system
 brew "mysql"
+# NCurses Disk Usage
+brew "ncdu"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Utility for managing network connections
+brew "netcat"
 # Network grep
 brew "ngrep"
 # Manage multiple Node.js versions
 brew "nvm"
-# Extract just secret information out of OpenPGP secret keys
-brew "paperkey"
 # Highly capable, feature-rich programming language
 brew "perl"
-# PNG image optimizing utility
-brew "pngquant"
+# Python dependency management tool
+brew "pipenv"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
-# QR Code generation
-brew "qrencode"
+# Monitor data's progress through a pipe
+brew "pv"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
-# Feature-rich console based todo list manager
-brew "task"
+# Tool to create intelligent and beautiful documentation
+brew "sphinx-doc"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Vi 'workalike' with many additional features
-brew "vim", args: ["with-override-system-vi"]
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Tool for managing your YubiKey configuration
@@ -120,7 +130,7 @@ cask "google-chrome"
 cask "iterm2"
 cask "karabiner-elements"
 cask "licecap"
+cask "rectangle"
 cask "robo-3t"
 cask "slack"
-cask "spectacle"
 cask "webstorm"

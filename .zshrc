@@ -136,8 +136,8 @@ export GREP_OPTIONS='--color=auto'
 # Lets gpg's pinentry ask for a PIN when needed
 export GPG_TTY=$(tty)
 
-# Make vim the default editor
-export EDITOR=vim
+# Make nvim the default editor
+export EDITOR=nvim
 
 LESS_ARR=(
 # Case insensitive searching if search term doesn't contain an uppercase letter
@@ -190,7 +190,7 @@ _fzf_compgen_dir() {
 
 # See man fasd
 eval "$(fasd --init auto)"
-alias v='f -e vim'
+alias v='f -e $EDITOR'
 
 export RIPGREP_CONFIG_PATH=~/.config/rg/rg_config
 
