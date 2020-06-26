@@ -108,13 +108,12 @@ alias ll="ls -ahl"
 alias g="git"
 alias gp="gitpic"
 alias date8601="date -u +'%Y-%m-%dT%H:%M:%SZ'"
-# The pattern in awk makes sure we don't touch the branch currently checked out
+# The second pattern in awk makes sure we don't touch the branch currently checked out
 # (or try to git branch -D * !!)
 # gdg for "git delete gone"
-alias gdg="git branch --verbose | \
-    grep --fixed-strings '[gone]' | \
-    awk '!/^\*/ {print \$1}' | \
-    xargs git branch --delete --force"
+alias gdg="git branch --delete --force \
+    \$(git branch --verbose | \
+    awk '/\[gone]/ && !/^\*/ {print \$1}')"
 alias s2a="saml2aws login \
     --force \
     --profile default \
