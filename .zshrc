@@ -234,7 +234,7 @@ path+="$(brew --prefix)/share/git-core/contrib/diff-highlight"
 path=("/usr/local/opt/python/libexec/bin" $path)
 # path=("/usr/local/opt/python@3.8/bin" $path)
 
-path+=~/src/go/bin
+path+=~/go/bin
 
 ## Custom functionality
 gitpic() {
