@@ -233,7 +233,7 @@ autocmd BufNewFile,BufRead Makecfg,Makerules setlocal noexpandtab
 autocmd FileType go setlocal noexpandtab
 
 " Use two spaces in various files
-autocmd FileType html,javascript,ruby,toml,yaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType html,javascript,markdown,ruby,toml,yaml setlocal shiftwidth=2 tabstop=2
 
 " Hard-wrap text in a Phabricator diff description or update message to 150 cols
 autocmd BufRead */edit.*/new-commit,*/edit.*/differential-update-comments setlocal textwidth=150
