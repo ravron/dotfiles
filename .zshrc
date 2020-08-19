@@ -122,6 +122,32 @@ alias s2a="saml2aws login \
     --duo-mfa-option Passcode \
     --skip-prompt"
 
+# hb takes one argument, a git ref, and browses to the PR's page, if possible,
+# or else the commit's page. It identifies the PR's page by the commit message,
+# looking for the last instance of a string like '(#1234)', to handle reverts. A
+# future improvement would be to ask GH directly for the PR associated with a
+# commit to avoid this heuristic, reliable though it usually is.
+hb() {
+    # Return immediately on non-zero exit, and restore options on return
+    setopt errreturn localoptions
+    commit=$(git rev-parse --verify $@)
+    # git: get the commit message
+    # rg: get strings that look like '(#1234)', one per line
+    # tr: delete the parens and pound sign
+    # tail: get the last line, in case of multiple matches
+    PR=$(git show --no-patch --format=%B $commit | \
+        rg --only-matching '(\(#\d+\))' | \
+        tr -d '(#)' | \
+        tail -1)
+
+    if [[ -n $PR ]]; then
+        hub browse -- "pull/$PR"
+    else
+        hub browse -- "commit/$commit"
+    fi
+}
+
+
 ## External command configurations
 # Makes ls color its output
 export CLICOLOR=1
