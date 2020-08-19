@@ -99,7 +99,8 @@ SAVEHIST=10000
 # redraw prompt
 # incappendhistory: append to hist file after every command. won't pull history
 # into shell session except at startup, so per-shell history stays coherent.
-setopt histignoredups histverify incappendhistory
+# histignorespace: don't save commands which start with a space
+setopt histignoredups histverify incappendhistory histignorespace
 
 ## Command aliases
 alias vi="nvim"
