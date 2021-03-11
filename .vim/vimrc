@@ -233,7 +233,7 @@ autocmd BufNewFile,BufRead Makecfg,Makerules setlocal noexpandtab
 autocmd FileType go setlocal noexpandtab
 
 " Use two spaces in various files
-autocmd FileType html,javascript,markdown,ruby,toml,yaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType html,javascript,markdown,ruby,text,toml,yaml setlocal shiftwidth=2 tabstop=2
 
 " Hard-wrap text in a Phabricator diff description or update message to 150 cols
 autocmd BufRead */edit.*/new-commit,*/edit.*/differential-update-comments setlocal textwidth=150
@@ -289,3 +289,13 @@ nnoremap Y y$
 " Remap vim-gitgutter next hunk and previous hunk
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
+
+" Overrides s:default_action from fzf
+" https://github.com/junegunn/fzf.vim/blob/cc13a4b728c7b76c63e6dc42f320cec955d74227/autoload/fzf/vim.vim#L295-L298
+" Same except that enter also opens in tab
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit',
+  \ 'enter': 'tab split' }
+
