@@ -33,6 +33,7 @@ find_paths() {
         \! -name "Brewfile" \
         \! -name "README.md" \
         \! -name "*.swp" \
+        \! -name ".gitignore" \
         -type "$1" \
         -print0
 }
