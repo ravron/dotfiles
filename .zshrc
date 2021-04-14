@@ -183,23 +183,6 @@ export LESS_TERMCAP_us="${(%):-"%F{blue}"}"  # blue for starting underline
 export LESS_TERMCAP_me="${(%):-"%f"}"  # reset for ending bold
 export LESS_TERMCAP_ue="${(%):-"%f"}"  # reset for ending underline
 
-# nvm's setup is slow and I don't use it often. Lazy load it by wrapping it in a
-# function by the same name. When first invoked in a session, unset the wrapper,
-# load the real nvm, and invoke it with the provided parameters. The
-# NVM_SYMLINK_CURRENT causes nvm to create a symlink to the current node at
-# ~/.nvm/current. It's not great, because it breaks the session model of nvm,
-# but I almost never change it anyways, and that fixes tools like WebStorm.
-export NVM_SYMLINK_CURRENT=true
-nvm() {
-    unfunction nvm
-    # See brew info nvm
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
-    [ -s "/usr/local/etc/bash_completion.d/nvm" ] && \. "/usr/local/etc/bash_completion.d/nvm"
-    nvm "$@"
-}
-path+=~/.nvm/current/bin
-
 # See brew info fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --hidden --follow --type file --type symlink --exclude .git/objects'
@@ -235,6 +218,9 @@ path=("/usr/local/opt/python/libexec/bin" $path)
 # path=("/usr/local/opt/python@3.8/bin" $path)
 
 path+=~/go/bin
+
+# Get Wireshark CLIs
+path+=/Applications/Wireshark.app/Contents/MacOS
 
 ## Custom functionality
 gitpic() {
@@ -297,3 +283,4 @@ gitpic() {
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
+. /usr/local/opt/asdf/asdf.sh
