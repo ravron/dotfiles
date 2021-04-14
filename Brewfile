@@ -1,5 +1,6 @@
 tap "beeftornado/rmtree"
 tap "burntsushi/ripgrep", "https://github.com/BurntSushi/ripgrep.git"
+tap "golangci/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
@@ -7,19 +8,17 @@ tap "homebrew/services"
 tap "versent/taps"
 # Automatic configure script builder
 brew "autoconf"
-# Library for command-line editing
-brew "readline"
-# Command-line interface for SQLite
-brew "sqlite"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "asdf"
+# Authenticate with AWS using your Okta credentials
+brew "aws-okta"
 # General-purpose data compression with high compression ratio
 brew "xz"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8", link: true
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# Programmable completion for Bash 4.1+
+# Programmable completion for Bash 4.2+
 brew "bash-completion@2"
 # Core application library for C
 brew "glib"
@@ -33,8 +32,10 @@ brew "ctags"
 brew "fasd"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Banner-like program prints strings as ASCII art
@@ -43,6 +44,8 @@ brew "figlet"
 brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# C library for multiple-precision floating-point computations
+brew "mpfr"
 # GNU awk utility
 brew "gawk"
 # Toolkit for image loading and pixel buffer manipulation
@@ -65,6 +68,8 @@ brew "httpie"
 brew "hub"
 # Configurable static site generator
 brew "hugo"
+# Command-line benchmarking tool
+brew "hyperfine"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Update of iperf: measures TCP, UDP, and SCTP bandwidth
@@ -93,8 +98,6 @@ brew "neovim"
 brew "netcat"
 # Network grep
 brew "ngrep"
-# Manage multiple Node.js versions
-brew "nvm"
 # Highly capable, feature-rich programming language
 brew "perl"
 # Python dependency management tool
@@ -103,6 +106,12 @@ brew "pipenv"
 brew "poppler"
 # Monitor data's progress through a pipe
 brew "pv"
+# QR Code generation
+brew "qrencode"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# Rust toolchain installer
+brew "rustup-init"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Tool to create intelligent and beautiful documentation
@@ -111,26 +120,49 @@ brew "sphinx-doc"
 brew "tree"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
+# Watch files and take action when they change
+brew "watchman"
 # Tool for managing your YubiKey configuration
 brew "ykman"
+# Command-line tool for the YubiKey PIV application
+brew "yubico-piv-tool"
 # General-purpose lossless data-compression library
 brew "zlib"
 # UNIX shell (command interpreter)
 brew "zsh"
 # Recursively search directories for a regex pattern.
 brew "burntsushi/ripgrep/ripgrep-bin"
+# Fast linters runner for Go.
+brew "golangci/tap/golangci-lint"
 brew "versent/taps/saml2aws"
+# Password manager that keeps all passwords secure behind one password
 cask "1password"
+# Android SDK component
 cask "android-platform-tools"
+# Tools for building Android applications
 cask "android-studio"
+# Web debugging Proxy application
 cask "charles"
 cask "day-o"
+# Go (golang) IDE
 cask "goland"
+# Web browser
 cask "google-chrome"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Keyboard customizer
 cask "karabiner-elements"
+# Open-source keystroke visualizer
+cask "keycastr"
+# Animated screen capture application
 cask "licecap"
+# Clipboard manager
+cask "maccy"
+# Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# MongoDB management tool
 cask "robo-3t"
+# Team communication and collaboration software
 cask "slack"
+# JavaScript IDE
 cask "webstorm"
