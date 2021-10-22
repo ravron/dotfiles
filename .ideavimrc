@@ -1,3 +1,5 @@
+source ~/.vim/vimrc
+
 " Show line number at cursor
 set number
 " Show relative numbers other than at cursor
@@ -6,4 +8,7 @@ set number
 set clipboard=unnamed
 
 nnoremap Y y$
-set ideajoinset clipboard+=ideaputset ideajoin ideaput
+set ideajoinset
+set clipboard+=ideaputset
+set ideajoin
+set ideaput
