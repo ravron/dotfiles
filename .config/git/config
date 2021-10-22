@@ -111,3 +111,5 @@
 #   git config --file ~/.config/git/work_config user.email <work_email>
 [include]
 	path = private_config
+[http]
+	cookiefile = /Users/ravron/.gitcookies
