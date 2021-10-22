@@ -121,6 +121,7 @@ alias s2a="saml2aws login \
     --profile default \
     --duo-mfa-option Passcode \
     --skip-prompt"
+alias gpc="git push -u origin head && hub compare"
 
 # hb takes one argument, a git ref, and browses to the PR's page, if possible,
 # or else the commit's page. It identifies the PR's page by the commit message,
@@ -145,6 +146,15 @@ hb() {
     else
         hub browse -- "commit/$commit"
     fi
+}
+
+# scd causes a connected gpg smartcard to prompt for a PIN, if locked.
+scd() {
+    # Return immediately on non-zero exit, and restore options on return
+    setopt errreturn localoptions
+    SERIAL=$(gpg-connect-agent 'scd serialno' /bye | \
+        sed -n '1s/S SERIALNO //p')
+    gpg-connect-agent "scd checkpin $SERIAL" /bye
 }
 
 
@@ -218,6 +228,7 @@ path=("/usr/local/opt/python/libexec/bin" $path)
 # path=("/usr/local/opt/python@3.8/bin" $path)
 
 path+=~/go/bin
+export GOPATH=~/go
 
 # Get Wireshark CLIs
 path+=/Applications/Wireshark.app/Contents/MacOS
