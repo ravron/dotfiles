@@ -20,7 +20,7 @@
 " Show line number at cursor
 set number
 " Show relative numbers other than at cursor
-set relativenumber
+" set relativenumber
 " Don't restrict draw speed
 set ttyfast
 " Detect filetypes
@@ -96,6 +96,11 @@ let mapleader=" "
 
 " Disable gq to train myself to use the better gw instead
 nnoremap gq :echoerr 'Use gw instead!'<CR>
+
+" Use U as redo instead of ctrl-r
+nnoremap U :redo<CR>
+" Disable ctrl-r so I remember
+nnoremap <C-r> :echoerr 'Use U instead!'<CR>
 
 " Allow mouse use
 set mouse=a
