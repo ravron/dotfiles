@@ -1,4 +1,3 @@
-tap "beeftornado/rmtree"
 tap "burntsushi/ripgrep", "https://github.com/BurntSushi/ripgrep.git"
 tap "golangci/tap"
 tap "homebrew/bundle"
@@ -10,10 +9,14 @@ tap "versent/taps"
 brew "autoconf"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
+# Use AWS IAM credentials to authenticate to Kubernetes
+brew "aws-iam-authenticator"
 # Authenticate with AWS using your Okta credentials
 brew "aws-okta"
 # General-purpose data compression with high compression ratio
 brew "xz"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -32,14 +35,26 @@ brew "ctags"
 brew "fasd"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# GNU Ubiquitous Intelligent Language for Extensions
+brew "guile"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
+# HTTP/2 C Library
+brew "nghttp2"
+# Secure Reliable Transport
+brew "srt"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Banner-like program prints strings as ASCII art
 brew "figlet"
+# Collection of reusable C++ library artifacts developed at Facebook
+brew "folly"
 # Monitor a directory for changes and run a shell command
 brew "fswatch"
 # Command-line fuzzy finder written in Go
@@ -57,7 +72,7 @@ brew "git"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
-brew "gnupg"
+brew "gnupg", link: false
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Next generation open source RPC library and framework
@@ -80,8 +95,16 @@ brew "ipv6calc"
 brew "jo"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Run local Kubernetes cluster in Docker
+brew "kind"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# Framework for layout and rendering of i18n text
+brew "pango"
 # Library to render SVG files using Cairo
 brew "librsvg"
+# Command-line utility to interact with linkerd
+brew "linkerd"
 # Securely transfers data between computers
 brew "magic-wormhole"
 # Intercept, modify, replay, save HTTP/S traffic
@@ -98,16 +121,22 @@ brew "neovim"
 brew "netcat"
 # Network grep
 brew "ngrep"
+# Port scanning utility for large networks
+brew "nmap"
 # Highly capable, feature-rich programming language
 brew "perl"
 # Python dependency management tool
 brew "pipenv"
-# PDF rendering library (based on the xpdf-3.0 code base)
-brew "poppler"
 # Monitor data's progress through a pipe
 brew "pv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
+# Tools for and transforming and inspecting PDF files
+brew "qpdf"
 # QR Code generation
 brew "qrencode"
+# Persistent key-value database, with built-in net interface
+brew "redis", restart_service: true
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
 # Rust toolchain installer
@@ -118,6 +147,8 @@ brew "shellcheck"
 brew "sphinx-doc"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Tool for creating isolated virtual python environments
+brew "virtualenv"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Watch files and take action when they change
@@ -137,10 +168,8 @@ brew "golangci/tap/golangci-lint"
 brew "versent/taps/saml2aws"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
-# Android SDK component
-cask "android-platform-tools"
-# Tools for building Android applications
-cask "android-studio"
+# Securely stores and accesses AWS credentials in a development environment
+cask "aws-vault"
 # Web debugging Proxy application
 cask "charles"
 cask "day-o"
