@@ -214,6 +214,8 @@ alias v='f -e $EDITOR'
 
 export RIPGREP_CONFIG_PATH=~/.config/rg/rg_config
 
+export AWS_SDK_LOAD_CONFIG=1
+
 ## Add things to the PATH
 # For an explanation of how this `path+=…` works, see
 # http://zsh.sourceforge.net/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell
