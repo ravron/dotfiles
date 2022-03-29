@@ -1,5 +1,6 @@
 [user]
 	name = Riley Avron
+	email = ra.git@posteo.net
 	useConfigOnly = true
 	signingKey = DE8E01726203B66DC3C5FC7DF2456F8F1804DE5B
 [alias]
