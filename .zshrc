@@ -195,6 +195,7 @@ export LESS_TERMCAP_ue="${(%):-"%f"}"  # reset for ending underline
 
 # See brew info fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 export FZF_DEFAULT_COMMAND='fd --hidden --follow --type file --type symlink --exclude .git/objects'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --hidden --follow --type directory --exclude .git/objects'
@@ -222,7 +223,11 @@ export AWS_SDK_LOAD_CONFIG=1
 
 # Add diff-highlight executable to PATH. See
 # https://github.com/git/git/tree/master/contrib/diff-highlight
-path+="$(brew --prefix)/share/git-core/contrib/diff-highlight"
+if type brew > /dev/null; then
+    path+="$(brew --prefix)/share/git-core/contrib/diff-highlight"
+fi
+# Ubuntu
+path+="/usr/share/doc/git/contrib/diff-highlight"
 
 # Get `python` to be brew python, see `brew info python` and
 # https://github.com/Homebrew/homebrew-core/issues/15746
@@ -296,4 +301,8 @@ gitpic() {
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
-. /usr/local/opt/asdf/asdf.sh
+if [[ -f /usr/local/opt/asdf/asdf.sh ]]; then
+    . /usr/local/opt/asdf/asdf.sh
+elif [[ -f $HOME/.asdf/asdf.sh ]]; then
+    . $HOME/.asdf/asdf.sh
+fi
