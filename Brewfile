@@ -7,14 +7,12 @@ tap "homebrew/services"
 brew "autoconf"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
-# General-purpose data compression with high compression ratio
-brew "xz"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 4.2+
 brew "bash-completion@2"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Core application library for C
 brew "glib"
 # Configurable talking characters in ASCII art
@@ -39,6 +37,8 @@ brew "git"
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg", link: false
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Add GitHub support to git on the command-line
@@ -91,3 +91,5 @@ cask "maccy"
 cask "rectangle"
 # Team communication and collaboration software
 cask "slack"
+# Music streaming service
+cask "spotify"
