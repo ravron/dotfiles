@@ -26,7 +26,8 @@ fi
 
 
 # I don't believe $USER can have spaces, but no harm in quoting it anyways.
-readonly pack_path=~/.vim/pack/"${USER}"/start
+#readonly pack_path=~/.vim/pack/"${USER}"/start
+readonly pack_path=~/.local/share/nvim/site/pack/"${USER}"/start
 echo "Installing vim packages to ${pack_path}..."
 
 mkdir -p "$pack_path"
@@ -56,9 +57,6 @@ ssh -T git@github.com &>/dev/null || true
 # too many are accumulated, each can be started as a background job.
 
 package git@github.com:airblade/vim-gitgutter.git
-package git@github.com:xolox/vim-easytags.git
-# Required by easytags
-package git@github.com:xolox/vim-misc.git
 package git@github.com:morhetz/gruvbox.git
 package git@github.com:leafgarland/typescript-vim.git
 package git@github.com:cespare/vim-toml.git
