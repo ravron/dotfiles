@@ -1,4 +1,3 @@
-tap "burntsushi/ripgrep", "https://github.com/BurntSushi/ripgrep.git"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
@@ -33,6 +32,8 @@ brew "fzf"
 brew "gawk"
 # Distributed revision control system
 brew "git"
+# Git extension for versioning large files
+brew "git-lfs"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
@@ -61,6 +62,8 @@ brew "netcat"
 brew "ngrep"
 # Port scanning utility for large networks
 brew "nmap"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Executes a program periodically, showing output fullscreen
@@ -73,8 +76,6 @@ brew "ykman"
 brew "yubico-piv-tool"
 # UNIX shell (command interpreter)
 brew "zsh"
-# Recursively search directories for a regex pattern.
-brew "burntsushi/ripgrep/ripgrep-bin"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Web browser
