@@ -106,7 +106,7 @@
 # directory. Including it at the end makes sure any options specified there have
 # precedence over defaults specified above.
 #   git config --file ~/.config/git/private_config user.email <personal_email>
-#   git config --file ~/.config/git/private_config includeIf.gitdir:~/your/work/dir.path work_config
+#   git config --file ~/.config/git/private_config includeIf.gitdir:~/your/work/dir.path/ work_config
 #   git config --file ~/.config/git/work_config user.email <work_email>
 [include]
 	path = private_config
