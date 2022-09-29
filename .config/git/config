@@ -9,7 +9,10 @@
 	c = !echo \"use switch or restore instead\" && false
 	ds = diff --stat --summary
 	ss = show --stat
-	fm = fetch origin master:master
+	# Partly from https://stackoverflow.com/a/44750379/1292061. Figures out
+	# origin's default branch (usually main or master), fetches that, and
+	# updates the local branch of the same name. Needs to be sh compatible.
+	fm = "!b=$(git symbolic-ref refs/remotes/origin/HEAD); git fetch origin ${b##*/}:${b##*/}"
 	p = pull
 	l = log
 	dc = diff --cached
