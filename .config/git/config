@@ -1,7 +1,13 @@
 [user]
 	name = Riley Avron
 	email = ra.git@posteo.net
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICmU9FoT+e+xxifnGkH3vHofbpOk3b5trob1M5zTXPKr
 	useConfigOnly = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+	allowedSignersFile = ~/.ssh/allowed_signers
 [alias]
 	s = status
 	d = diff
@@ -77,6 +83,7 @@
 	# autoSetupMerge = always
 [commit]
 	verbose = true
+	gpgsign = true
 [format]
 	pretty = fuller
 [rerere]
