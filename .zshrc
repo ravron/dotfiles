@@ -306,3 +306,7 @@ if [[ -f /usr/local/opt/asdf/asdf.sh ]]; then
 elif [[ -f $HOME/.asdf/asdf.sh ]]; then
     . $HOME/.asdf/asdf.sh
 fi
+
+if hash direnv 2>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
