@@ -12,3 +12,6 @@ set ideajoinset
 set clipboard+=ideaputset
 set ideajoin
 set ideaput
+
+" Map % to use the IDE-supported 'go to matching brace' action
+map % <Action>(EditorMatchBrace)
