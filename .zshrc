@@ -310,6 +310,35 @@ gitpic() {
         less -FSRX
 }
 
+ghpr() {
+    setopt errreturn localoptions
+    unsetopt casematch
+    B=$(git branch --show-current)
+    MAIN_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD)
+    MAIN_BRANCH=${MAIN_BRANCH##*/}
+    FIRST_COMMIT_SUBJECT=$(git log $MAIN_BRANCH... --pretty=format:%s | tail -1)
+    argv=()
+    if [[ "$B" =~ 'prod-[[:digit:]]{2,}' ]]; then
+        TICKET=${(U)MATCH}
+        argv+=(--title "$TICKET: $FIRST_COMMIT_SUBJECT")
+    else
+        echo "branch '$B' does not appear to have a JIRA ticket in it, cannot prefill anything"
+    fi
+
+    PR_TEMPLATE=$(git rev-parse --show-toplevel)/.github/pull_request_template.md
+    if [[ -v TICKET && -f "$PR_TEMPLATE" ]]; then
+        gh pr create --web "$argv[@]" \
+            --body-file <(sed '/begin-ticket-link/,+1s/^$/'"$TICKET/" \
+                $(git rev-parse --show-toplevel)/.github/pull_request_template.md)
+        return
+    fi
+
+    if [[ -v TICKET ]]; then
+        argv+=(--body $'\n\n'"$TICKET")
+    fi
+    gh pr create --web "$argv[@]"
+}
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 if [[ -f /usr/local/opt/asdf/asdf.sh ]]; then
