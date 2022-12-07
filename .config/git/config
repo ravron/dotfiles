@@ -40,6 +40,7 @@
 [push]
 	default = upstream
 	recurseSubmodules = check
+	autoSetupRemote = true
 [log]
 	decorate = true
 	date = iso-local
@@ -77,6 +78,7 @@
 	autoStash = true
 [status]
 	submoduleSummary = 10
+	relativePaths = false
 [interactive]
 	singleKey = true
 [branch]
@@ -99,7 +101,6 @@
 	smtpServerPort = 587
 [core]
 	pager = less -FX
-	sparseCheckout = true
 [pager]
 	log = diff-highlight | less -FX
 	show = diff-highlight | less -FX
@@ -122,3 +123,8 @@
 	path = private_config
 [http]
 	cookiefile = /Users/ravron/.gitcookies
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
