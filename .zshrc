@@ -306,7 +306,7 @@ gitpic() {
 
     $GITLOG | \
         perl -pe "s/@[a-zA-Z0-9.-]+//" | \
-        perl -pe "s/${BOLDUSER}((?:\e[^m]*?m)?:)/${BOLDCYAN}${BOLDUSER}\1/" | \
+        perl -pe "s/${BOLDUSER}"'((?:\e[^m]*?m)?:)'"/${BOLDCYAN}${BOLDUSER}\1/" | \
         less -FSRX
 }
 
