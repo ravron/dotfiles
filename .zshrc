@@ -341,10 +341,8 @@ ghpr() {
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
-if [[ -f /usr/local/opt/asdf/asdf.sh ]]; then
-    . /usr/local/opt/asdf/asdf.sh
-elif [[ -f $HOME/.asdf/asdf.sh ]]; then
-    . $HOME/.asdf/asdf.sh
+if [[ -f $(brew --prefix asdf)/libexec/asdf.sh ]]; then
+    . $(brew --prefix asdf)/libexec/asdf.sh
 fi
 
 if hash direnv 2>/dev/null; then
