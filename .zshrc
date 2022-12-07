@@ -191,6 +191,7 @@ LESS_ARR=(
 '--ignore-case'
 # Output ANSI color control characters directly. Useful to preserve color.
 '--RAW-CONTROL-CHARS'
+'--quit-if-one-screen'
 )
 export LESS=${LESS_ARR[@]}
 # Set the control codes less emits for certain text attributes
