@@ -125,11 +125,6 @@ gdg() {
     git branch --delete --force \
         $(git branch --verbose | awk '/\[gone]/ && !/^\*/ {print $1}')
 }
-alias s2a="saml2aws login \
-    --force \
-    --profile default \
-    --duo-mfa-option Passcode \
-    --skip-prompt"
 alias gpc="git push -u origin head && hub compare"
 
 # hb takes one argument, a git ref, and browses to the PR's page, if possible,
@@ -164,6 +159,12 @@ scd() {
     SERIAL=$(gpg-connect-agent 'scd serialno' /bye | \
         sed -n '1s/S SERIALNO //p')
     gpg-connect-agent "scd checkpin $SERIAL" /bye
+}
+
+aws-exec() {
+    setopt errreturn localoptions
+    OTP=$(op item get wfei6mkyxrord2mhai4qysrm6q --otp)
+    aws-vault exec --mfa-token=$OTP "$@"
 }
 
 
