@@ -66,16 +66,25 @@ setopt prompt_subst
 PROMPT=
 # Set color to bright white
 PROMPT+='%F{#FFFFFF}'
-PROMPT+='▶ '
+PROMPT+='■■▶ '
 PROMPT+='%F{cyan}'
 # Current working dir
 PROMPT+='%1~ '
 PROMPT+='%F{blue}'
 PROMPT+='${vcs_info_msg_0_}'
+ 
+PROMPT+='%F{magenta}'
+# If currently using aws-vault profile, display it
+PROMPT+='${AWS_VAULT+aws:${AWS_VAULT} }'
+
 PROMPT+='%F{red}'
-PROMPT+='$ '
+# If the previous exit code is false, then display it in brackets
+PROMPT+='%(?..[%?] )'
+# Print the SHLVL if it's at least 2
+PROMPT+='%(2L.%L-.)'
+PROMPT+='%(!.#.$)'
 # Turn off colors
-PROMPT+='%f'
+PROMPT+=' %f'
 
 ## Completion
 zstyle ':completion:*' menu yes select search
