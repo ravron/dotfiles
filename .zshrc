@@ -383,3 +383,7 @@ _navi_widget() {
 
 zle -N _navi_widget
 bindkey '^g' _navi_widget
+
+# https://github.com/99designs/aws-vault/blob/master/USAGE.md#environment-variables
+# When getting short-lived STS tokens with aws-vault, make them live 8h
+export AWS_SESSION_TOKEN_TTL=8h
