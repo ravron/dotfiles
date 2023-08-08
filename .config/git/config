@@ -108,10 +108,10 @@
 [color "diff-highlight"]
 	# Derived by looking at the red and green colors in my colorscheme and
 	# dropping their HSB brightness "enough"
-	oldHighlight = "normal #67120e"
-	newHighlight = "normal #40410d"
-	oldReset = normal black
-	newReset = normal black
+	#oldHighlight = "normal #67120e"
+	#newHighlight = "normal #40410d"
+	#oldReset = normal black
+	#newReset = normal black
 # Use this include to specify an email to use on this machine by default, and
 # optionally override it to your work email based on path to a given git
 # directory. Including it at the end makes sure any options specified there have
@@ -128,3 +128,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[init]
+	defaultBranch = main
