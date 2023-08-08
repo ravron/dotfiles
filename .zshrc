@@ -5,12 +5,31 @@ unsetopt autocd notify
 # The following lines were added by compinstall
 zstyle :compinstall filename '/Users/ravron/.zshrc'
 
+
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export HOMEBREW_AUTOREMOVE=1
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+
+# Get homebrew's bundled completions
+# Specifically, they include newer versions of some zsh functions, like
+# vcs_info.
+if type brew &>/dev/null; then
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+    FPATH="$(brew --prefix)/share/zsh/functions:${FPATH}"
+fi
+
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Get private configuration
-[[ -f ~/.zshrc_private ]] && source ~/.zshrc_private
+# Make nix work
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
 
 # Make `run-help` work. 
 # See http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Accessing-On_002dLine-Help
@@ -85,6 +104,13 @@ PROMPT+='%(2L.%L-.)'
 PROMPT+='%(!.#.$)'
 # Turn off colors
 PROMPT+=' %f'
+
+# Tell terminal the pwd on directory change
+chpwd() {
+  echo -ne "\033]0;${PWD##*/}\007"
+}
+# Execute once immediately; otherwise the tab title is empty until a cd
+chpwd
 
 ## Completion
 zstyle ':completion:*' menu yes select search
